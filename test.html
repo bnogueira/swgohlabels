@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="utf-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+    </style>
+
+</head>
+
+
+
+<body>
+    <script src="SwgohHelp.js"></script>
+    <div id="start"></div>
+    <div id="test"></div>
+    <div id="end"></div>
+
+    <script>
+
+        //import { SwgohHelp } from './SwgohHelp.js';
+
+        async function example() {
+
+            try {
+
+                //const SwgohHelp = require('./SwgohHelp.js');
+
+                const swgoh = new SwgohHelp({
+                    "protocol": "https",
+                    "host": "api.swgoh.help",
+                    "username": "canudo",
+                    "password": "k3yNy66gdxGPVJv4",
+                    "client_id": "YOUR_ID",
+                    "client_secret": "YOUR_SECRET"
+                });
+
+                let result = null;
+                // switch (process.argv[2]) {
+
+                //     case "player":
+                //         result = await swgoh.fetchPlayer(parseInt(process.argv[3]));
+
+                //     case "guild":
+                //         result = await swgoh.fetchGuild(parseInt(process.argv[3]));
+
+                //     default:
+                //         result = await swgoh.fetchData(process.argv[2]);
+
+                // }
+
+                result = await swgoh.fetchPlayer(parseInt(821651341));
+                return result;
+                //console.log(JSON.stringify(result, '', '  '));
+
+            } catch (e) {
+                //console.error(e);
+                return e;
+            }
+
+        }
+
+        document.getElementById("start").innerHTML = "started";
+
+        example().then(function (data) {
+            document.getElementById("test").innerHTML = data;
+        });
+
+        document.getElementById("end").innerHTML = "ended";
+
+    </script>
+
+
+</body>
+
+</html>

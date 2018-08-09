@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+
+<!-- 
+Client ID
+640918568812-15p1vdvh51map3b1e4948q9romq66dpl.apps.googleusercontent.com
+Client Secret
+ykoWsva8S04lyUiRCYp9I45G 
+-->
+
+<head>
+  <!-- <meta charset="utf-8"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-signin-client_id" content="640918568812-15p1vdvh51map3b1e4948q9romq66dpl.apps.googleusercontent.com">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="storage.js"></script>
+  <script src="objectDesign.js"></script>
+  <script src="labels.js"></script>
+  <script src="enums.js"></script>
+
+  <style>
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <a href="#" onclick="signOut();">Sign out</a> -->
+
+  <table style="width:80%">
+    <tr>
+      <th>
+        <div id="profile" class="not-selectable" onclick="updateProfile()">Select a profile</div>
+      </th>
+      <th>
+        <div class="g-signin2" style="display:none;" data-onsuccess="onSignIn"></div>
+      </th>
+      <!--<th>
+        <a href="#" onclick="signOut();">Sign out</a>
+      </th>-->
+    </tr>
+  </table>
+
+  <div id="workspace" class="container not-selectable">
+    <div id="data" class="flex-item data-area">
+    </div>
+    <div id="controls" class="fixed">
+      <div id="pool" class="button notselected" onclick="createLabel()"></div>
+      <div id="mode" class="button notselected" onclick="toggleWorkingMode()">View</div>
+      <div id="context" class="button notselected" onclick="toggleContext()">Toons</div>
+    </div>
+  </div>
+
+  <script>
+    $(window).on('load', function () {
+      main();
+    })
+
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      // console.log('Name: ' + profile.getName());
+      // console.log('Image URL: ' + profile.getImageUrl());
+      // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      // console.log('ai a merda...');
+
+      var id_token = googleUser.getAuthResponse().id_token;
+
+      //console.log('id_token: ', id_token);
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://swgohlabels.com/services/auth.php');
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onload = function () {
+        // console.log(xhr.responseText);
+        // var obj = JSON.parse(xhr.responseText);
+        $auth = true;
+        console.log('Signed in');
+      };
+      //sessionStorage.setItem('idtoken', '');
+      xhr.send('idtoken=' + id_token);
+    }
+
+    function onSignInFailure() {
+      console.log("nah, not signed in!");
+    }
+
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+
+    function main() {
+      $labels = null;
+      $images = new Object();
+      $pool = new Array();
+      $workingMode = new workingMode();
+      $context = new context()
+      $profile = localStorage.getItem("profile");
+
+      refreshPool();
+
+      if ($profile != null) {
+        getData();
+        document.getElementById("profile").innerHTML = $profile;
+      }
+    }
+
+    function getJSON(url, callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.responseType = 'json';
+      xhr.onload = function () {
+        var status = xhr.status;
+        if (status === 200) {
+          callback(null, xhr.response);
+        } else {
+          callback(status, xhr.response);
+        }
+      };
+      xhr.send();
+    };
+
+    function getXML(url, callback) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          callback(this.responseText);
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
+    }
+
+    function keepData(err, result) {
+      if (err !== null) {
+        alert('Something went wrong: ' + err);
+        return;
+      }
+
+      $data = result;
+
+      getXML(
+        "https://script.google.com/macros/s/AKfycbxpqgsngbaUJ4xMl22o5VpAkz1oSpSzfIsw694CzfwyEc_GmeM/exec?user=" + $profile,
+        addUserDataAndCreateIndex);
+    }
+
+    function addUserDataAndCreateIndex(result) {
+      if (result == null) {
+        alert('Something went wrong: ');
+        return;
+      }
+
+      if (result == "error") {
+        console.log("correu mal");
+        return;
+      }
+
+      var jsonResult = JSON.parse(result);
+
+      for (var i = 0; i < $data.length; i++)
+        if (jsonResult.hasOwnProperty($data[i].uniqueName))
+          $data[i].instance = jsonResult[$data[i].uniqueName];
+
+      $data.sort(compareDataElements);
+      storeObjectInStorage('data', $data);
+      localStorage.setItem('profile', $profile);
+      dataIsReady();
+    }
+
+    function getData() {
+      $data = getObjectFromStorage('data');
+
+      // display objects
+      if ($data != null) {
+        dataIsReady();
+      }
+      else {
+        clearLocalStorage();
+        getJSON("https://raw.githubusercontent.com/jmiln/SWGoHBot/master/data/characters.json", keepData);
+      }
+    }
+
+    function dataIsReady() {
+      $labels = new Labels($data);
+      buildImagesIndex($data);
+      displayObjects($data, $labels);
+      filterAllToons();
+      assignImages();
+    }
+
+    function toggleWorkingMode() {
+      $workingMode.toggle();
+      document.getElementById("mode").innerHTML = $workingMode.description;
+    }
+
+    function toggleContext() {
+      $context.toggle();
+      document.getElementById("context").innerHTML = $context.description;
+
+      if ($context.value == $context.contexts.labels)
+        filterAllLabels();
+      else
+        filterAllToons();
+    }
+
+    function resetContext() {
+      if ($context.value == $context.contexts.labels)
+        toggleContext();
+    }
+
+    function refreshPool() {
+      document.getElementById("pool").innerHTML = $pool.length;
+    }
+
+    function assignImages() {
+      // pre-load
+      var preLoad = [];
+      var lastIndex = Object.keys($images).length - 1;
+
+      Object.keys($images).forEach(function (key, index) {
+        var myImage = new Image();
+
+        if (index == lastIndex) {
+          myImage.onload = function () {
+            showImages();
+          }
+        }
+
+
+        myImage.src = $images[key].src;
+        preLoad.push(myImage);
+      });
+    }
+
+    function showImages() {
+      var imgDefer = document.getElementsByTagName('img');
+      for (var i = 0; i < imgDefer.length; i++) {
+        if (imgDefer[i].getAttribute('data-src')) {
+          imgDefer[i].setAttribute('src', imgDefer[i].getAttribute('data-src'));
+        }
+        if (imgDefer[i].getAttribute('data-style')) {
+          imgDefer[i].setAttribute('style', imgDefer[i].getAttribute('data-style'));
+        }
+      }
+    }
+
+    function compareDataElements(a, b) {
+      if (a.hasOwnProperty("instance") && b.hasOwnProperty("instance"))
+        return b.instance.power - a.instance.power;
+      if (a.hasOwnProperty("instance"))
+        return -1;
+      if (b.hasOwnProperty("instance"))
+        return 1;
+      return 0;
+    }
+
+    function displayObjects(data, labels) {
+      // use object's design if available
+      var dataInnerHTML = localStorage.getItem('dataInnerHTML');
+      if (dataInnerHTML != null) {
+        document.getElementById("data").innerHTML = dataInnerHTML;
+        return;
+      }
+
+      // display labels
+      document.getElementById("data").innerHTML = $labels.displayLabels();
+
+      // displaying objects
+      for (var i = 0; i < data.length; i++)
+        document.getElementById("data").innerHTML += getObjectDesign(data[i], true);
+
+      // keep object's design for future requests
+      localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
+    }
+
+    function buildImagesIndex(data) {
+      var item;
+      for (var i = 0; i < data.length; i++) {
+        item = data[i];
+        $images[item.uniqueName] = {};
+        $images[item.uniqueName].src = "img" + item.avatarURL.slice(item.avatarURL.lastIndexOf('/'));
+      }
+    }
+
+    function objectClicked(elem, id) {
+      if ($workingMode.value == $workingMode.workModes.select)
+        addToPool(elem, id);
+    }
+
+    function labelClicked(label) {
+      if ($workingMode.value == $workingMode.workModes.view)
+        filterByLabel(label);
+    }
+
+
+    function addToPool(elem, id) {
+      var index = $pool.indexOf(id);
+      if (index > -1) {
+        // unselect
+        $pool.splice(index, 1);
+        elem.className = "player-char-portrait char-portrait-full notselected";
+      }
+      else {
+        //select
+        $pool.push(id);
+        elem.className = "player-char-portrait char-portrait-full selected";
+      }
+      refreshPool();
+    }
+
+    function createLabel(label) {
+      var label = prompt("What is the label name?");
+
+      if (label == null || label == "")
+        return;
+
+      if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
+        window.gapi.auth2.getAuthInstance().signIn().then(() => { signedInCreateLabel(label); });
+        return;
+      }
+      else
+      {
+        signedInCreateLabel(label)
+      }
+    }
+
+    function signedInCreateLabel(label) {
+      // unselect objects
+      for (var i = 0; i < $pool.length; i++) {
+        $("div[id='data']").children("div[id='" + $pool[i] + "']").toggleClass("selected notselected");
+      }
+
+      // create label
+      var newLabelHtml = $labels.createLabel(label, $pool);
+      $pool = [];
+      refreshPool();
+
+      // add to displayed data
+      document.getElementById("data").innerHTML =
+        newLabelHtml + document.getElementById("data").innerHTML;
+
+      // save the html for later sage
+      localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
+    }
+
+    function updateProfile() {
+      var profile = prompt("Enter a swgoh.gg profile to fetch data:", $profile);
+      if (profile == null || profile == "") {
+        return null;
+      }
+
+      document.getElementById("data").innerHTML = "";
+      resetContext();
+      $profile = profile;
+      clearLocalStorage();
+      getData();
+      document.getElementById("profile").innerHTML = $profile;
+    }
+
+    function filterByLabel(label) {
+      if (label == "All") {
+        filterAllToons();
+        toggleContext();
+        return;
+      }
+
+      // hide all
+      $("div[id='data']").children("div").hide();
+      var labelObjectsIds = $labels.getLabelValue(label);
+
+      // show selected div ids
+      for (var i = 0; i < labelObjectsIds.length; i++)
+        $("div[id='data']").children("div[id='" + labelObjectsIds[i] + "']").show();
+    }
+
+    function filterAllLabels() {
+      // hide all
+      $("div[id='data']").children("div").hide();
+
+      var allLabels = $labels.getAllLabels();
+      for (var property in allLabels)
+        $("div[id='data']").children("div[id='" + property + "']").show();
+    }
+
+    function filterAllToons() {
+      // hide all
+      $("div[id='data']").children("div").show();
+
+      var allLabels = $labels.getAllLabels();
+      for (var property in allLabels)
+        $("div[id='data']").children("div[id='" + property + "']").hide();
+    }
+  </script>
+</body>
+
+</html>
