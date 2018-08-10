@@ -8,6 +8,14 @@
   opacity: 1;
 }
 
+.top-bar {
+  text-align: center;
+  width: 80%;
+  /*background-color: gray;*/
+  background: linear-gradient(to right, gray 0%, white 70%);
+  color: black;
+}
+
 .fixed {
   position: sticky;
   top: 0px;

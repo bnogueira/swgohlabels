@@ -26,10 +26,10 @@
   <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <a href="#" onclick="signOut();">Sign out</a> -->
 
-  <table style="width:80%">
+  <table class="top-bar">
     <tr>
       <th>
-        <div id="profile" class="not-selectable" onclick="updateProfile()">Select a profile</div>
+        <div id="profile" class="not-selectable" onclick="updateProfile()"></div>
       </th>
       <th>
         <div class="g-signin2" style="display:none;" data-onsuccess="onSignIn"></div>
@@ -55,6 +55,10 @@
       main();
     })
 
+    function setStatus(status) {
+      document.getElementById("profile").innerHTML = status;
+    }
+
     function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
       // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -74,7 +78,7 @@
         // console.log(xhr.responseText);
         // var obj = JSON.parse(xhr.responseText);
         $auth = true;
-        console.log('Signed in');
+        setStatus('Signed in');
       };
       //sessionStorage.setItem('idtoken', '');
       xhr.send('idtoken=' + id_token);
@@ -101,10 +105,10 @@
 
       refreshPool();
 
-      if ($profile != null) {
+      if ($profile == null)
+        setStatus("Select a profile");
+      else
         getData();
-        document.getElementById("profile").innerHTML = $profile;
-      }
     }
 
     function getJSON(url, callback) {
@@ -153,6 +157,7 @@
       }
 
       if (result == "error") {
+        setStatus("Sync error, select a profile");
         console.log("correu mal");
         return;
       }
@@ -177,17 +182,20 @@
         dataIsReady();
       }
       else {
+        setStatus("Syncing data...");
         clearLocalStorage();
         getJSON("https://raw.githubusercontent.com/jmiln/SWGoHBot/master/data/characters.json", keepData);
       }
     }
 
     function dataIsReady() {
+      setStatus("preparing data");
       $labels = new Labels($data);
       buildImagesIndex($data);
       displayObjects($data, $labels);
       filterAllToons();
       assignImages();
+      setStatus($profile);
     }
 
     function toggleWorkingMode() {
@@ -320,8 +328,7 @@
         window.gapi.auth2.getAuthInstance().signIn().then(() => { signedInCreateLabel(label); });
         return;
       }
-      else
-      {
+      else {
         signedInCreateLabel(label)
       }
     }
@@ -346,7 +353,12 @@
     }
 
     function updateProfile() {
-      var profile = prompt("Enter a swgoh.gg profile to fetch data:", $profile);
+      var profile = $profile;
+            
+      if (profile == null)
+        profile = "";
+
+      profile = prompt("Enter a swgoh.gg profile to fetch data:", profile);
       if (profile == null || profile == "") {
         return null;
       }
@@ -356,7 +368,7 @@
       $profile = profile;
       clearLocalStorage();
       getData();
-      document.getElementById("profile").innerHTML = $profile;
+      //setStatus($profile);
     }
 
     function filterByLabel(label) {
