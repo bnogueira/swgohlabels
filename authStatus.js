@@ -28,19 +28,31 @@ class AuthStatus {
     }
 
     isNotStarted() {
+        this.update();
         return this.status == this.NotStarted;
     }
 
     isInProgress() {
+        this.update();
         return this.status == this.InProgress;
     }
 
     isError() {
+        this.update();
         return this.status == this.Error;
     }
 
     isValid() {
+        this.update();
         return this.status == this.Valid;
+    }
+
+    update()
+    {
+        var isSignedIn = window.gapi.auth2.getAuthInstance().isSignedIn.get();
+
+        if (isSignedIn)
+            this.changeToValid();
     }
 }
 
