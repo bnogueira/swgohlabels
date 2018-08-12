@@ -14,6 +14,7 @@
   <script src="objectDesign.js"></script>
   <script src="labels.js"></script>
   <script src="enums.js"></script>
+  <script src="authStatus.js"></script>
 
   <style>
   </style>
@@ -60,6 +61,7 @@
     }
 
     function onSignIn(googleUser) {
+      $authStatus = staticAuthStatus;
       var profile = googleUser.getBasicProfile();
       // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
       // console.log('Name: ' + profile.getName());
@@ -69,22 +71,24 @@
 
       var id_token = googleUser.getAuthResponse().id_token;
 
-      //console.log('id_token: ', id_token);
-
       var xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://swgohlabels.com/services/auth.php');
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onload = function () {
         // console.log(xhr.responseText);
         // var obj = JSON.parse(xhr.responseText);
-        $auth = true;
-        setStatus('Signed in');
+        if (this.status == 200) {
+          $authStatus.changeToValid();
+          setStatus('Signed in');
+          requestUserLabels();
+        }
       };
       //sessionStorage.setItem('idtoken', '');
       xhr.send('idtoken=' + id_token);
     }
 
     function onSignInFailure() {
+      $authStatus.changeToError();
       console.log("nah, not signed in!");
     }
 
@@ -96,6 +100,7 @@
     }
 
     function main() {
+      $authStatus = staticAuthStatus;
       $labels = null;
       $images = new Object();
       $pool = new Array();
@@ -111,7 +116,32 @@
         getData();
     }
 
+    function ExecuteCommand(command, arguments, callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://swgohlabels.com/services/auth.php');
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onload = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          callback(xhr.responseText);
+        }
+      };
+
+      var parameters = "command=" + command;
+      if (arguments != null)
+        parameters += "&arguments=" + arguments;
+
+      xhr.send(parameters);
+    }
+
+    function requestUserLabels() {
+      ExecuteCommand("getUserLabels", null, keepUserLabels);
+    }
+
     function getJSON(url, callback) {
+      getJSONWithParams(url, null, callback);
+    };
+
+    function getJSONWithParams(url, params, callback) {
       var xhr = new XMLHttpRequest();
       xhr.open('GET', url, true);
       xhr.responseType = 'json';
@@ -123,8 +153,12 @@
           callback(status, xhr.response);
         }
       };
-      xhr.send();
-    };
+
+      if (params != null)
+        xhr.send(params);
+      else
+        xhr.send();
+    }
 
     function getXML(url, callback) {
       var xhttp = new XMLHttpRequest();
@@ -188,9 +222,41 @@
       }
     }
 
+    function keepUserLabels(result) {
+      $labels = new Labels($data, result);
+      setupDataUI();
+    }
+
     function dataIsReady() {
+
+      //getJSONWithParams("https://swgohlabels.com/services/auth.php", "command=getUserLabels", keepUserLabels);
+
+      //////////////////////
+      // var xhr = new XMLHttpRequest();
+      // xhr.open('POST', 'https://swgohlabels.com/services/auth.php');
+      // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      // xhr.onload = function () {
+      //   // console.log(xhr.responseText);
+      //   // var obj = JSON.parse(xhr.responseText);
+      //   var tanga = true;
+      // };
+      // xhr.send('command=getUserLabels');
+      //////////////////////
+
+
+
       setStatus("preparing data");
-      $labels = new Labels($data);
+
+      $authStatus.log();
+
+      if ($authStatus.isNotStarted()) {
+        console.log("status not started");
+        $labels = new Labels($data, null);
+        setupDataUI();
+      }
+    }
+
+    function setupDataUI() {
       buildImagesIndex($data);
       displayObjects($data, $labels);
       filterAllToons();
@@ -318,7 +384,7 @@
       refreshPool();
     }
 
-    function createLabel(label) {
+    function createLabel() {
       var label = prompt("What is the label name?");
 
       if (label == null || label == "")
@@ -350,11 +416,18 @@
 
       // save the html for later sage
       localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
+
+      // save labels in the database
+      ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
+    }
+
+    function getUserLabelsResult(response) {
+      console.log(response);
     }
 
     function updateProfile() {
       var profile = $profile;
-            
+
       if (profile == null)
         profile = "";
 
