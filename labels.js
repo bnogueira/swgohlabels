@@ -1,8 +1,8 @@
 
 
 class Labels {
-    constructor(data, userLabels) {
-        this.userLabels = userLabels;
+    constructor(data) {
+        this.userLabels = getObjectFromStorage('userLabels');
         this.baseLabels = getObjectFromStorage('baseLabels');
 
         this.createBaseLabels(data);

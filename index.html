@@ -14,7 +14,6 @@
   <script src="objectDesign.js"></script>
   <script src="labels.js"></script>
   <script src="enums.js"></script>
-  <script src="authStatus.js"></script>
 
   <style>
   </style>
@@ -61,38 +60,39 @@
     }
 
     function onSignIn(googleUser) {
-      $authStatus = staticAuthStatus;
-      $authStatus.changeToInProgress();
-      $authStatus.log();
-      var profile = googleUser.getBasicProfile();
-      // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      // console.log('Name: ' + profile.getName());
-      // console.log('Image URL: ' + profile.getImageUrl());
-      // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-      // console.log('ai a merda...');
+      var authInstance = window.gapi.auth2.getAuthInstance();
+      if (authInstance != null && authInstance.isSignedIn.get())
+      {
+        // nao é bem isto, é verificar se o token já foi confirmado porque senao empanca no google
+        console.log("user already authenticated");
+        return;
+      }
 
+
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      
       var id_token = googleUser.getAuthResponse().id_token;
 
       var xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://swgohlabels.com/services/auth.php');
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onload = function () {
-        // console.log(xhr.responseText);
+        console.log(xhr.responseText);
         // var obj = JSON.parse(xhr.responseText);
-        if (this.status == 200) {
-          $authStatus.changeToValid();
-          $authStatus.log();
-          console.log("auth thread will request user labels");
+        if (this.readyState == 4 && this.status == 200) {
           setStatus('Signed in');
-          requestUserLabels();
         }
       };
       //sessionStorage.setItem('idtoken', '');
+      console.log("sending idtoken");
       xhr.send('idtoken=' + id_token);
     }
 
     function onSignInFailure() {
-      $authStatus.changeToError();
       console.log("nah, not signed in!");
     }
 
@@ -104,7 +104,6 @@
     }
 
     function main() {
-      $authStatus = staticAuthStatus;
       $labels = null;
       $images = new Object();
       $pool = new Array();
@@ -137,10 +136,6 @@
       xhr.send(parameters);
     }
 
-    function requestUserLabels() {
-      ExecuteCommand("getUserLabels", null, keepUserLabels);
-    }
-
     function getJSON(url, callback) {
       getJSONWithParams(url, null, callback);
     };
@@ -151,7 +146,7 @@
       xhr.responseType = 'json';
       xhr.onload = function () {
         var status = xhr.status;
-        if (status === 200) {
+        if (xhr.status === 200) {
           callback(null, xhr.response);
         } else {
           callback(status, xhr.response);
@@ -227,25 +222,9 @@
       }
     }
 
-    function keepUserLabels(result) {
-      $labels = new Labels($data, result);
-      console.log("auth thread will display");
-      setupDataUI();
-    }
-
     function dataIsReady() {
-      setStatus("preparing data");
+      $labels = new Labels($data);
 
-      $authStatus.log();
-
-      if ($authStatus.isNotStarted()) {
-        console.log("main thread will display");
-        $labels = new Labels($data, null);
-        setupDataUI();
-      }
-    }
-
-    function setupDataUI() {
       buildImagesIndex($data);
       displayObjects($data, $labels);
       filterAllToons();
@@ -320,7 +299,6 @@
     }
 
     function displayObjects(data, labels) {
-      // use object's design if available
       var dataInnerHTML = localStorage.getItem('dataInnerHTML');
       if (dataInnerHTML != null) {
         document.getElementById("data").innerHTML = dataInnerHTML;
