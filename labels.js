@@ -16,9 +16,6 @@ class Labels {
         var clickEvent = 'onclick="labelClicked(&apos;' + label + '&apos;)"';
         var hidden = "";
 
-        if (label == "All")
-            hidden = " style='display: none;'";
-
         return '<div id="' + label + '" class="label notselected" ' + clickEvent + hidden + '>' + label + '</div>';
     }
 
@@ -33,9 +30,7 @@ class Labels {
             labels = this.baseLabels;
 
         // get all values from label
-        returnValue = labels[label];
-        returnValue.splice(0, 0, "All");
-        return returnValue;
+        return labels[label];
     }
 
     displayLabels() {
@@ -63,7 +58,6 @@ class Labels {
                 }
             }
 
-            this.baseLabels["All"] = [];
             storeObjectInStorage('baseLabels', this.baseLabels);
         }
     }

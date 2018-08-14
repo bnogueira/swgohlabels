@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <link rel="stylesheet" href="styles.css?version=1.0">
+  <link rel="stylesheet" href="styles.css?version=1.2">
 
   <script src="storage.js"></script>
   <script src="objectDesign.js"></script>
@@ -26,7 +26,7 @@
   <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <a href="#" onclick="signOut();">Sign out</a> -->
 
-  <table class="top-bar">
+  <!-- <table class="top-bar">
     <tr>
       <th>
         <div id="profile" class="not-selectable" onclick="updateProfile()"></div>
@@ -34,11 +34,21 @@
       <th>
         <div class="g-signin2" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
       </th>
-      <!--<th>
+      <th>
         <a href="#" onclick="signOut();">Sign out</a>
-      </th>-->
+      </th>
     </tr>
-  </table>
+  </table> -->
+
+  <div class="topbar not-selectable">
+    <div id="profile" class="topbar-item" onclick="updateProfile()">Select a profile</div>
+    <div class="g-signin2 topbar-item" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
+    <div type="topbar-button" id="all" class="topbar-item" style="display:none;" onclick="buttonAllClicked()">All</div>
+    <div type="topbar-button" id="rename" class="topbar-item" style="display:none;">Rename</div>
+    <div type="topbar-button" id="delete"  class="topbar-item" style="width: 50px;display:none;">Delete</div>
+  </div>
+
+  
 
   <div id="workspace" class="container not-selectable">
     <div id="data" class="flex-item data-area">
@@ -65,7 +75,7 @@
       console.log('Name: ' + profile.getName());
       console.log('Image URL: ' + profile.getImageUrl());
       console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-      
+
       var idToken = googleUser.getAuthResponse().id_token;
       sessionStorage.setItem("signInToken", idToken);
 
@@ -82,7 +92,7 @@
         console.log(xhr.responseText);
         if (this.readyState == 4 && this.status == 200) {
           //setStatus('Signed in');
-          
+
           var idToken = sessionStorage.getItem("signInToken");
           sessionStorage.setItem(idToken, true);
         }
@@ -223,13 +233,12 @@
     function dataIsReady() {
       var authInstance = window.gapi.auth2.getAuthInstance();
 
-      if (authInstance != null && authInstance.isSignedIn.get())
-      {
-        ExecuteCommand("getUserLabels", null, function(response) {
+      if (authInstance != null && authInstance.isSignedIn.get()) {
+        ExecuteCommand("getUserLabels", null, function (response) {
           console.log(response);
           var userLabels = JSON.parse(response);
           storeObjectInStorage("userLabels", userLabels);
-          
+
           $labels = new Labels($data);
           buildImagesIndex($data);
           displayObjects($data, $labels);
@@ -238,8 +247,7 @@
           setStatus($profile);
         });
       }
-      else
-      {
+      else {
         $labels = new Labels($data);
         buildImagesIndex($data);
         displayObjects($data, $labels);
@@ -429,12 +437,15 @@
       //setStatus($profile);
     }
 
+    function buttonAllClicked()
+    {
+      filterAllToons();
+      toggleContext();
+    }
+
     function filterByLabel(label) {
-      if (label == "All") {
-        filterAllToons();
-        toggleContext();
-        return;
-      }
+      $("div[id='profile']").hide();
+      $("div[type='topbar-button']").show();
 
       // hide all
       $("div[id='data']").children("div").hide();
