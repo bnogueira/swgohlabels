@@ -8,13 +8,12 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?version=1.0">
 
   <script src="storage.js"></script>
   <script src="objectDesign.js"></script>
   <script src="labels.js"></script>
   <script src="enums.js"></script>
-  <script src="authStatus.js"></script>
 
   <style>
   </style>
@@ -33,7 +32,7 @@
         <div id="profile" class="not-selectable" onclick="updateProfile()"></div>
       </th>
       <th>
-        <div class="g-signin2" style="display:none;" data-onsuccess="onSignIn"></div>
+        <div class="g-signin2" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
       </th>
       <!--<th>
         <a href="#" onclick="signOut();">Sign out</a>
@@ -61,34 +60,38 @@
     }
 
     function onSignIn(googleUser) {
-      $authStatus = staticAuthStatus;
       var profile = googleUser.getBasicProfile();
-      // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      // console.log('Name: ' + profile.getName());
-      // console.log('Image URL: ' + profile.getImageUrl());
-      // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-      // console.log('ai a merda...');
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      
+      var idToken = googleUser.getAuthResponse().id_token;
+      sessionStorage.setItem("signInToken", idToken);
 
-      var id_token = googleUser.getAuthResponse().id_token;
+      var idTokenValidationResult = sessionStorage.getItem(idToken);
+      if (idTokenValidationResult != null) {
+        console.log("User sign in token was already validated");
+        return;
+      }
 
       var xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://swgohlabels.com/services/auth.php');
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onload = function () {
-        // console.log(xhr.responseText);
-        // var obj = JSON.parse(xhr.responseText);
-        if (this.status == 200) {
-          $authStatus.changeToValid();
-          setStatus('Signed in');
-          requestUserLabels();
+        console.log(xhr.responseText);
+        if (this.readyState == 4 && this.status == 200) {
+          //setStatus('Signed in');
+          
+          var idToken = sessionStorage.getItem("signInToken");
+          sessionStorage.setItem(idToken, true);
         }
       };
-      //sessionStorage.setItem('idtoken', '');
-      xhr.send('idtoken=' + id_token);
+      console.log("sending idtoken");
+      xhr.send('idtoken=' + idToken);
     }
 
     function onSignInFailure() {
-      $authStatus.changeToError();
       console.log("nah, not signed in!");
     }
 
@@ -100,7 +103,6 @@
     }
 
     function main() {
-      $authStatus = staticAuthStatus;
       $labels = null;
       $images = new Object();
       $pool = new Array();
@@ -133,10 +135,6 @@
       xhr.send(parameters);
     }
 
-    function requestUserLabels() {
-      ExecuteCommand("getUserLabels", null, keepUserLabels);
-    }
-
     function getJSON(url, callback) {
       getJSONWithParams(url, null, callback);
     };
@@ -147,7 +145,7 @@
       xhr.responseType = 'json';
       xhr.onload = function () {
         var status = xhr.status;
-        if (status === 200) {
+        if (xhr.status === 200) {
           callback(null, xhr.response);
         } else {
           callback(status, xhr.response);
@@ -222,46 +220,33 @@
       }
     }
 
-    function keepUserLabels(result) {
-      $labels = new Labels($data, result);
-      setupDataUI();
-    }
-
     function dataIsReady() {
+      var authInstance = window.gapi.auth2.getAuthInstance();
 
-      //getJSONWithParams("https://swgohlabels.com/services/auth.php", "command=getUserLabels", keepUserLabels);
-
-      //////////////////////
-      // var xhr = new XMLHttpRequest();
-      // xhr.open('POST', 'https://swgohlabels.com/services/auth.php');
-      // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      // xhr.onload = function () {
-      //   // console.log(xhr.responseText);
-      //   // var obj = JSON.parse(xhr.responseText);
-      //   var tanga = true;
-      // };
-      // xhr.send('command=getUserLabels');
-      //////////////////////
-
-
-
-      setStatus("preparing data");
-
-      $authStatus.log();
-
-      if ($authStatus.isNotStarted()) {
-        console.log("status not started");
-        $labels = new Labels($data, null);
-        setupDataUI();
+      if (authInstance != null && authInstance.isSignedIn.get())
+      {
+        ExecuteCommand("getUserLabels", null, function(response) {
+          console.log(response);
+          var userLabels = JSON.parse(response);
+          storeObjectInStorage("userLabels", userLabels);
+          
+          $labels = new Labels($data);
+          buildImagesIndex($data);
+          displayObjects($data, $labels);
+          filterAllToons();
+          assignImages();
+          setStatus($profile);
+        });
       }
-    }
-
-    function setupDataUI() {
-      buildImagesIndex($data);
-      displayObjects($data, $labels);
-      filterAllToons();
-      assignImages();
-      setStatus($profile);
+      else
+      {
+        $labels = new Labels($data);
+        buildImagesIndex($data);
+        displayObjects($data, $labels);
+        filterAllToons();
+        assignImages();
+        setStatus($profile);
+      }
     }
 
     function toggleWorkingMode() {
@@ -331,19 +316,20 @@
     }
 
     function displayObjects(data, labels) {
-      // use object's design if available
       var dataInnerHTML = localStorage.getItem('dataInnerHTML');
       if (dataInnerHTML != null) {
         document.getElementById("data").innerHTML = dataInnerHTML;
         return;
       }
 
-      // display labels
-      document.getElementById("data").innerHTML = $labels.displayLabels();
+      document.getElementById("data").innerHTML = "";
 
       // displaying objects
       for (var i = 0; i < data.length; i++)
         document.getElementById("data").innerHTML += getObjectDesign(data[i], true);
+
+      // display labels
+      document.getElementById("data").innerHTML += $labels.displayLabels();
 
       // keep object's design for future requests
       localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
@@ -411,8 +397,7 @@
       refreshPool();
 
       // add to displayed data
-      document.getElementById("data").innerHTML =
-        newLabelHtml + document.getElementById("data").innerHTML;
+      document.getElementById("data").innerHTML += newLabelHtml;
 
       // save the html for later sage
       localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
