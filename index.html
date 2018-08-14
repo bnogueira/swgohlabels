@@ -56,7 +56,7 @@
     <div id="controls" class="fixed">
       <div id="pool" class="button notselected" onclick="createLabel()"></div>
       <div id="mode" class="button notselected" onclick="toggleWorkingMode()">View</div>
-      <div id="context" class="button notselected" onclick="toggleContext()">Toons</div>
+      <div id="context" class="button notselected" onclick="toggleContext()"></div>
     </div>
   </div>
 
@@ -114,12 +114,13 @@
 
     function main() {
       $labels = null;
+      $profile = localStorage.getItem("profile");
       $images = new Object();
       $pool = new Array();
       $workingMode = new workingMode();
-      $context = new context()
-      $profile = localStorage.getItem("profile");
+      $context = new context();
 
+      document.getElementById("context").innerHTML = $context.description;
       refreshPool();
 
       if ($profile == null)
