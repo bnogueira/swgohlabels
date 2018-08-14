@@ -322,12 +322,14 @@
         return;
       }
 
-      // display labels
-      document.getElementById("data").innerHTML = $labels.displayLabels();
+      document.getElementById("data").innerHTML = "";
 
       // displaying objects
       for (var i = 0; i < data.length; i++)
         document.getElementById("data").innerHTML += getObjectDesign(data[i], true);
+
+      // display labels
+      document.getElementById("data").innerHTML += $labels.displayLabels();
 
       // keep object's design for future requests
       localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
@@ -395,8 +397,7 @@
       refreshPool();
 
       // add to displayed data
-      document.getElementById("data").innerHTML =
-        newLabelHtml + document.getElementById("data").innerHTML;
+      document.getElementById("data").innerHTML += newLabelHtml;
 
       // save the html for later sage
       localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
