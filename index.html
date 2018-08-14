@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?version=1.0">
 
   <script src="storage.js"></script>
   <script src="objectDesign.js"></script>
@@ -60,36 +60,35 @@
     }
 
     function onSignIn(googleUser) {
-      var authInstance = window.gapi.auth2.getAuthInstance();
-      if (authInstance != null && authInstance.isSignedIn.get())
-      {
-        // nao é bem isto, é verificar se o token já foi confirmado porque senao empanca no google
-        console.log("user already authenticated");
-        return;
-      }
-
-
       var profile = googleUser.getBasicProfile();
       console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
       console.log('Name: ' + profile.getName());
       console.log('Image URL: ' + profile.getImageUrl());
       console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
       
-      var id_token = googleUser.getAuthResponse().id_token;
+      var idToken = googleUser.getAuthResponse().id_token;
+      sessionStorage.setItem("signInToken", idToken);
+
+      var idTokenValidationResult = sessionStorage.getItem(idToken);
+      if (idTokenValidationResult != null) {
+        console.log("User sign in token was already validated");
+        return;
+      }
 
       var xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://swgohlabels.com/services/auth.php');
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onload = function () {
         console.log(xhr.responseText);
-        // var obj = JSON.parse(xhr.responseText);
         if (this.readyState == 4 && this.status == 200) {
-          setStatus('Signed in');
+          //setStatus('Signed in');
+          
+          var idToken = sessionStorage.getItem("signInToken");
+          sessionStorage.setItem(idToken, true);
         }
       };
-      //sessionStorage.setItem('idtoken', '');
       console.log("sending idtoken");
-      xhr.send('idtoken=' + id_token);
+      xhr.send('idtoken=' + idToken);
     }
 
     function onSignInFailure() {
@@ -218,18 +217,36 @@
         setStatus("Syncing data...");
         clearLocalStorage();
         getJSON("https://raw.githubusercontent.com/jmiln/SWGoHBot/master/data/characters.json", keepData);
-        //getJSON("./characters.json", keepData);
       }
     }
 
     function dataIsReady() {
-      $labels = new Labels($data);
+      var authInstance = window.gapi.auth2.getAuthInstance();
 
-      buildImagesIndex($data);
-      displayObjects($data, $labels);
-      filterAllToons();
-      assignImages();
-      setStatus($profile);
+      if (authInstance != null && authInstance.isSignedIn.get())
+      {
+        ExecuteCommand("getUserLabels", null, function(response) {
+          console.log(response);
+          var userLabels = JSON.parse(response);
+          storeObjectInStorage("userLabels", userLabels);
+          
+          $labels = new Labels($data);
+          buildImagesIndex($data);
+          displayObjects($data, $labels);
+          filterAllToons();
+          assignImages();
+          setStatus($profile);
+        });
+      }
+      else
+      {
+        $labels = new Labels($data);
+        buildImagesIndex($data);
+        displayObjects($data, $labels);
+        filterAllToons();
+        assignImages();
+        setStatus($profile);
+      }
     }
 
     function toggleWorkingMode() {
