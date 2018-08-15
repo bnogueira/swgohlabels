@@ -12,8 +12,8 @@
 
   <script src="storage.js"></script>
   <script src="objectDesign.js"></script>
-  <script src="labels.js"></script>
-  <script src="enums.js"></script>
+  <script src="labels.js?version=1.0"></script>
+  <script src="enums.js?version=1.0"></script>
 
   <style>
   </style>
@@ -26,24 +26,11 @@
   <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <a href="#" onclick="signOut();">Sign out</a> -->
 
-  <!-- <table class="top-bar">
-    <tr>
-      <th>
-        <div id="profile" class="not-selectable" onclick="updateProfile()"></div>
-      </th>
-      <th>
-        <div class="g-signin2" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
-      </th>
-      <th>
-        <a href="#" onclick="signOut();">Sign out</a>
-      </th>
-    </tr>
-  </table> -->
-
   <div class="topbar not-selectable">
     <div id="profile" class="topbar-item" onclick="updateProfile()">Select a profile</div>
-    <div class="g-signin2 topbar-item" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
+    <!-- <div class="g-signin2 topbar-item" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div> -->
     <div type="topbar-button" id="all" class="topbar-item" style="display:none;" onclick="buttonAllClicked()">All</div>
+    <div class="g-signin2 topbar-item" data-width = "100" data-height="25" style="padding: 5px; display: inline-block;" data-theme="dark" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
     <div type="topbar-button" id="rename" class="topbar-item" style="display:none;">Rename</div>
     <div type="topbar-button" id="delete" class="topbar-item" style="width: 50px;display:none;" onclick="buttonDeleteClicked()">Delete</div>
   </div>
@@ -56,7 +43,7 @@
     <div id="controls" class="fixed">
       <div id="pool" class="button notselected" onclick="createLabel()"></div>
       <div id="mode" class="button notselected" onclick="toggleWorkingMode()">View</div>
-      <div id="context" class="button notselected" onclick="toggleContext()"></div>
+      <div id="context" class="button notselected" onclick="toggleContext()">Labels</div>
     </div>
   </div>
 
@@ -119,7 +106,7 @@
       $pool = new Array();
       $workingMode = new workingMode();
       $context = new context();
-
+      
       document.getElementById("context").innerHTML = $context.description;
       refreshPool();
 
@@ -200,7 +187,7 @@
       }
 
       if (result == "error") {
-        setStatus("Sync error, select a profile");
+        setStatus("Sync error!");
         console.log("correu mal");
         return;
       }
@@ -363,7 +350,7 @@
     function labelClicked(label) {
       if ($workingMode.value == $workingMode.workModes.view)
         $selectedLabel = label;
-        filterByLabel(label);
+      filterByLabel(label);
     }
 
 
@@ -448,19 +435,31 @@
     }
 
     function buttonDeleteClicked() {
+      if (confirm("You're about to delete label '" + $selectedLabel + "'. Are you sure?") == false)
+        return;
+
       if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
         window.gapi.auth2.getAuthInstance().signIn().then(() => { deleteSelectedLabel(); });
         return;
       }
       else {
         deleteSelectedLabel();
-        ExecuteCommand("deleteUserLabel", $selectedLabel, function(response){console.log(response)});
       }
     }
 
-    function deleteSelectedLabel()
-    {
+    function deleteSelectedLabel() {
+      hideLabelButtons();
+      setStatus("updating data...");
+
       $labels.deleteLabel($selectedLabel);
+      ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
+      localStorage.removeItem('dataInnerHTML');
+
+      displayObjects($data, $labels);
+      filterAllLabels();
+      assignImages();
+      setStatus($profile);
+
     }
 
     function hideLabelButtons() {
