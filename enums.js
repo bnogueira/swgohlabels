@@ -22,15 +22,17 @@ class context {
         this.contexts = { "toons": 0, "labels": 1 };
         this.contextsDescriptions = ["Toons", "Labels"];
         this.value = this.contexts.toons;
-        this.description = this.contexts[this.value];
+        this.description = this.contextsDescriptions[this.contexts.labels];
     }
 
     toggle() {
+        var oldValue = this.value;
+
         if (this.value == this.contexts.toons)
             this.value = this.contexts.labels;
         else
             this.value = this.contexts.toons;
 
-        this.description = this.contextsDescriptions[this.value];
+        this.description = this.contextsDescriptions[oldValue];
     }
 }

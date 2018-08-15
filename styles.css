@@ -8,13 +8,40 @@
   opacity: 1;
 }
 
-.top-bar {
-  text-align: center;
+/* .top-bar {
+  text-align: left;
+  padding-left: 25px;
   width: 80%;
-  /*background-color: gray;*/
   background: linear-gradient(to right, gray 0%, white 70%);
   color: black;
+  height: 40px;
+} */
+
+.topbar {
+  height: 40px;
+  line-height: 40px;
+  width: 95%;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: grey;
 }
+
+.topbar-item {
+  width: 100px;
+  line-height: 30px;
+  display: inline-block;
+  background-color: lightblue;
+  text-align: center;
+}​
+
+.topbar-item-delete {
+  width: 50px;
+  line-height: 30px;
+  display: inline-block;
+  background-color: lightblue;
+  text-align: center;
+}​
 
 .fixed {
   position: sticky;
