@@ -70,4 +70,13 @@ class Labels {
         storeObjectInStorage('userLabels', this.userLabels);
         return this.getLabelDesign(label);
     }
+
+    deleteLabel(label) {
+        delete this.userLabels[label];
+        storeObjectInStorage('baseLabels', this.baseLabels);
+    }
+
+    isUserLabel(label) {
+        return (this.userLabels != null) && this.userLabels.hasOwnProperty(label);
+    }
 }

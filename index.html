@@ -45,10 +45,10 @@
     <div class="g-signin2 topbar-item" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
     <div type="topbar-button" id="all" class="topbar-item" style="display:none;" onclick="buttonAllClicked()">All</div>
     <div type="topbar-button" id="rename" class="topbar-item" style="display:none;">Rename</div>
-    <div type="topbar-button" id="delete"  class="topbar-item" style="width: 50px;display:none;">Delete</div>
+    <div type="topbar-button" id="delete" class="topbar-item" style="width: 50px;display:none;" onclick="buttonDeleteClicked()">Delete</div>
   </div>
 
-  
+
 
   <div id="workspace" class="container not-selectable">
     <div id="data" class="flex-item data-area">
@@ -271,6 +271,8 @@
         filterAllLabels();
       else
         filterAllToons();
+
+      hideLabelButtons();
     }
 
     function resetContext() {
@@ -360,6 +362,7 @@
 
     function labelClicked(label) {
       if ($workingMode.value == $workingMode.workModes.view)
+        $selectedLabel = label;
         filterByLabel(label);
     }
 
@@ -438,15 +441,40 @@
       //setStatus($profile);
     }
 
-    function buttonAllClicked()
-    {
+    function buttonAllClicked() {
       filterAllToons();
       toggleContext();
+      hideLabelButtons();
+    }
+
+    function buttonDeleteClicked() {
+      if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
+        window.gapi.auth2.getAuthInstance().signIn().then(() => { deleteSelectedLabel(); });
+        return;
+      }
+      else {
+        deleteSelectedLabel();
+        ExecuteCommand("deleteUserLabel", $selectedLabel, function(response){console.log(response)});
+      }
+    }
+
+    function deleteSelectedLabel()
+    {
+      $labels.deleteLabel($selectedLabel);
+    }
+
+    function hideLabelButtons() {
+      $("div[id='profile']").show();
+      $("div[type='topbar-button']").hide();
     }
 
     function filterByLabel(label) {
       $("div[id='profile']").hide();
-      $("div[type='topbar-button']").show();
+
+      if ($labels.isUserLabel(label))
+        $("div[type='topbar-button']").show();
+      else
+        $("div[id='all']").show();
 
       // hide all
       $("div[id='data']").children("div").hide();
