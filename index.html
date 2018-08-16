@@ -106,6 +106,7 @@
       $pool = new Array();
       $workingMode = new workingMode();
       $context = new context();
+      $selectedLabel = "";
       
       document.getElementById("context").innerHTML = $context.description;
       refreshPool();
@@ -348,8 +349,7 @@
     }
 
     function labelClicked(label) {
-      if ($workingMode.value == $workingMode.workModes.view)
-        $selectedLabel = label;
+      $selectedLabel = label;
       filterByLabel(label);
     }
 
@@ -460,7 +460,6 @@
     }
 
     function deleteSelectedLabel() {
-      hideLabelButtons();
       setStatus("updating data...");
 
       $labels.deleteLabel($selectedLabel);
@@ -519,12 +518,9 @@
     }
 
     function filterAllLabels() {
-      // hide all
-      $("div[id='data']").children("div").hide();
-
-      var allLabels = $labels.getAllLabels();
-      for (var property in allLabels)
-        $("div[id='data']").children("div[id='" + property + "']").show();
+      hideLabelButtons();
+      $selectedLabel = "";
+      filterByLabel("");
     }
 
     function filterAllToons() {

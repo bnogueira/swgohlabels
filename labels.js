@@ -6,6 +6,9 @@ class Labels {
         this.baseLabels = getObjectFromStorage('baseLabels');
 
         this.createBaseLabels(data);
+
+        if (this.userLabels != null)
+            Labels.completeCollectionHierarchy(this.userLabels);
     }
 
     getAllLabels() {
@@ -15,22 +18,22 @@ class Labels {
     getLabelDesign(label) {
         var clickEvent = 'onclick="labelClicked(&apos;' + label + '&apos;)"';
         var hidden = "";
+        var hierarchy = label.split('.');
 
-        return '<div id="' + label + '" class="label notselected" ' + clickEvent + hidden + '>' + label + '</div>';
+        return '<div id="' + label + '" class="label notselected" ' + clickEvent + hidden + '>' + hierarchy[hierarchy.length - 1] + '</div>';
     }
 
     getLabelValue(label) {
         var labels = null;
         var returnValue = [];
 
-        // select the container to fetch
         if (this.userLabels != null && this.userLabels.hasOwnProperty(label))
-            labels = this.userLabels;
-        else
-            labels = this.baseLabels;
+            returnValue = returnValue.concat(this.userLabels[label]);
 
-        // get all values from label
-        return labels[label];
+        if (this.baseLabels != null && this.baseLabels.hasOwnProperty(label))
+            returnValue = returnValue.concat(this.baseLabels[label]);
+
+        return returnValue;
     }
 
     displayLabels() {
@@ -38,35 +41,68 @@ class Labels {
 
         if (this.userLabels != null)
             for (var label in this.userLabels)
-                labelsHtml += this.getLabelDesign(label);
+                if (label != "")
+                    labelsHtml += this.getLabelDesign(label);
 
         if (this.baseLabels != null)
             for (var label in this.baseLabels)
-                labelsHtml += this.getLabelDesign(label);
+                if (label != "")
+                    labelsHtml += this.getLabelDesign(label);
 
         return labelsHtml;
     }
 
     createBaseLabels(data) {
         if (this.baseLabels == null) {
+            var root = "Categories."
             this.baseLabels = {};
+
+            // dig data and create labels
             for (var i = 0; i < data.length; i++) {
                 for (var j = 0; j < data[i].factions.length; j++) {
-                    if (this.baseLabels.hasOwnProperty(data[i].factions[j]) == false)
-                        this.baseLabels[data[i].factions[j]] = [];
-                    this.baseLabels[data[i].factions[j]].push(data[i].uniqueName);
+                    var labelName = root + data[i].factions[j];
+
+                    if (this.baseLabels.hasOwnProperty(labelName) == false)
+                        this.baseLabels[labelName] = [];
+                    this.baseLabels[labelName].push(data[i].uniqueName);
                 }
             }
 
+            // complete labels hierarchy
+            Labels.completeCollectionHierarchy(this.baseLabels);
             storeObjectInStorage('baseLabels', this.baseLabels);
         }
     }
+
+    static completeCollectionHierarchy(labels) {
+        for (var labelName in labels) {
+            Labels.completeHierarchy(labels, labelName);
+        }
+    }
+
+    static completeHierarchy(collection, labelName) {
+        var hierarchy = labelName.split('.');
+        var son = labelName;
+        var parent;
+        for (var h = 0; h < hierarchy.length; h++) {
+            parent = son.substring(0, son.lastIndexOf("."))
+            if (collection.hasOwnProperty(parent) == false)
+                collection[parent] = [];
+
+            if (collection[parent].includes(son) == false)
+                collection[parent].push(son);
+
+            son = parent;
+        }
+    }
+
 
     createLabel(label, pool) {
         if (this.userLabels == null)
             this.userLabels = {};
 
         this.userLabels[label] = pool;
+        Labels.completeHierarchy(this.userLabels, label);
         storeObjectInStorage('userLabels', this.userLabels);
         return this.getLabelDesign(label);
     }
@@ -83,6 +119,6 @@ class Labels {
     }
 
     isUserLabel(label) {
-        return (this.userLabels != null) && this.userLabels.hasOwnProperty(label);
+        return (this.userLabels != null) && this.userLabels.hasOwnProperty(label) && (label!="");
     }
 }
