@@ -76,6 +76,12 @@ class Labels {
         storeObjectInStorage('baseLabels', this.baseLabels);
     }
 
+    renameLabel(from, to) {
+        this.userLabels[to] = this.userLabels[from];
+        delete this.userLabels[from];
+        storeObjectInStorage('userLabels', this.userLabels);
+    }
+
     isUserLabel(label) {
         return (this.userLabels != null) && this.userLabels.hasOwnProperty(label);
     }
