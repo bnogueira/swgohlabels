@@ -27,13 +27,12 @@
   <a href="#" onclick="signOut();">Sign out</a> -->
 
   <div id="gbutton" class="g-signin2" data-onsuccess="onSignIn" style="display:none;" data-onfailure="onSignInFailure"></div>
-
   <div class="topbar not-selectable">
-    <div id="profile" class="topbar-item" onclick="updateProfile()">Sync</div>
+    <div id="profile" class="topbar-item" style="width: 100px" onclick="updateProfile()">Sync</div>
     <div id="back" class="topbar-item" style="display:none;" onclick="buttonBackClicked()">Back</div>
     <div type="pool-button" id="create" class="topbar-item" style="display:none;" onclick="buttonCreateClicked()">Create label</div>
     <div type="topbar-button" id="rename" class="topbar-item" style="display:none;" onclick="buttonRenameClicked()">Rename</div>
-    <div type="topbar-button" id="delete" class="topbar-item" style="width: 50px;display:none;" onclick="buttonDeleteClicked()">Delete</div>
+    <div type="topbar-button" id="delete" class="topbar-item" style="width: 60px;display:none;" onclick="buttonDeleteClicked()">Delete</div>
   </div>
 
 
@@ -373,17 +372,18 @@
     }
 
     function buttonCreateClicked() {
-      var label = prompt("What is the label name?");
-
-      if (label == null || label == "")
-        return;
-
       if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
-        window.gapi.auth2.getAuthInstance().signIn().then(() => { signedInCreateLabel(label); });
+        //window.gapi.auth2.getAuthInstance().signIn().then(() => { signedInCreateLabel(label); });
+        window.gapi.auth2.getAuthInstance().signIn().then(onSignIn);
         return;
       }
       else {
-        signedInCreateLabel(label)
+        var label = prompt("What is the label name?");
+
+        if (label == null || label == "")
+          return;
+
+        signedInCreateLabel(label);
       }
     }
 
