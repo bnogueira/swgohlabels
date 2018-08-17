@@ -21,8 +21,9 @@ class context {
     constructor() {
         this.contexts = { "toons": 0, "labels": 1 };
         this.contextsDescriptions = ["Toons", "Labels"];
-        this.value = this.contexts.toons;
-        this.description = this.contextsDescriptions[this.contexts.labels];
+        this.value = null;
+        this.description = null;
+        this.setToons();
     }
 
     toggle() {
@@ -34,5 +35,17 @@ class context {
             this.value = this.contexts.toons;
 
         this.description = this.contextsDescriptions[oldValue];
+    }
+
+    setLabels()
+    {
+        this.value = this.contexts.labels;
+        this.description = this.contextsDescriptions[this.contexts.toons];
+    }
+
+    setToons()
+    {
+        this.value = this.contexts.toons;
+        this.description = this.contextsDescriptions[this.contexts.labels];
     }
 }

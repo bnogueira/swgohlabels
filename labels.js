@@ -8,7 +8,10 @@ class Labels {
         this.createBaseLabels(data);
 
         if (this.userLabels != null)
+        {
+            delete this.userLabels[""];
             Labels.completeCollectionHierarchy(this.userLabels);
+        }
     }
 
     getAllLabels() {

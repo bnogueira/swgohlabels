@@ -9,11 +9,11 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-  <link rel="stylesheet" href="styles.css?version=1.5">
-  <script src="storage.js?version=1.3"></script>
-  <script src="objectDesign.js?version=1.3"></script>
-  <script src="labels.js?version=1.3"></script>
-  <script src="enums.js?version=1.3"></script>
+  <link rel="stylesheet" href="styles.css?version=1.6">
+  <script src="storage.js?version=1.6"></script>
+  <script src="objectDesign.js?version=1.6"></script>
+  <script src="labels.js?version=1.6"></script>
+  <script src="enums.js?version=1.6"></script>
 
   <style>
   </style>
@@ -31,6 +31,7 @@
   <div class="topbar not-selectable">
     <div id="profile" class="topbar-item" onclick="updateProfile()">Sync</div>
     <div id="back" class="topbar-item" style="display:none;" onclick="buttonBackClicked()">Back</div>
+    <div type="pool-button" id="create" class="topbar-item" style="display:none;" onclick="buttonCreateClicked()">Create label</div>
     <div type="topbar-button" id="rename" class="topbar-item" style="display:none;" onclick="buttonRenameClicked()">Rename</div>
     <div type="topbar-button" id="delete" class="topbar-item" style="width: 50px;display:none;" onclick="buttonDeleteClicked()">Delete</div>
   </div>
@@ -41,7 +42,7 @@
     <div id="data" class="flex-item data-area">
     </div>
     <div id="controls" class="fixed">
-      <div id="pool" class="button notselected" onclick="createLabel()"></div>
+      <div id="pool" class="button notselected" onclick="showPool()"></div>
       <!--<div id="mode" class="button notselected" onclick="toggleWorkingMode()">View</div>-->
       <div id="context" class="button notselected" onclick="toggleContext()">Labels</div>
     </div>
@@ -253,6 +254,10 @@
 
     function toggleContext() {
       $context.toggle();
+      contextUpdated();
+    }
+
+    function contextUpdated() {
       document.getElementById("context").innerHTML = $context.description;
 
       if ($context.value == $context.contexts.labels)
@@ -367,7 +372,7 @@
       refreshPool();
     }
 
-    function createLabel() {
+    function buttonCreateClicked() {
       var label = prompt("What is the label name?");
 
       if (label == null || label == "")
@@ -401,6 +406,9 @@
 
       // save labels in the database
       ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
+
+      $context.setLabels();
+      contextUpdated();
     }
 
     function getUserLabelsResult(response) {
@@ -505,6 +513,7 @@
 
     function hideLabelButtons() {
       $("div[type='topbar-button']").hide();
+      $("div[type='pool-button']").hide();
       $("div[id='profile']").show();
     }
 
@@ -525,6 +534,21 @@
         $("div[id='data']").children("div[id='" + labelObjectsIds[i] + "']").show();
     }
 
+    function showPool()
+    {
+      $context.setLabels();
+      contextUpdated();
+
+      $("div[id='data']").children("div").hide();
+      hideLabelButtons();
+      $("div[id='profile']").hide();
+      $("div[id='back']").show();
+      $("div[id='create']").show();
+
+      for (var i = 0; i < $pool.length; i++)
+        $("div[id='data']").children("div[id='" + $pool[i] + "']").show();
+    }
+
     function filterAllLabels() {
       hideLabelButtons();
       $selectedLabel = "";
@@ -536,6 +560,7 @@
       $("div[id='data']").children("div").show();
       $("div[id='profile']").show();
       $("div[id='back']").hide();
+      $("div[id='create']").hide();
 
       var allLabels = $labels.getAllLabels();
       for (var property in allLabels)
