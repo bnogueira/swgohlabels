@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-  <link rel="stylesheet" href="styles.css?version=1.6">
+  <link rel="stylesheet" href="styles.css?version=1.7">
   <script src="storage.js?version=1.6"></script>
   <script src="objectDesign.js?version=1.6"></script>
   <script src="labels.js?version=1.6"></script>
@@ -17,40 +17,67 @@
 
   <style>
   </style>
-
 </head>
 
 <body class="page-background">
-
-
   <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <a href="#" onclick="signOut();">Sign out</a> -->
 
-  <div id="gbutton" class="g-signin2" data-onsuccess="onSignIn" style="display:none;" data-onfailure="onSignInFailure"></div>
+  <div id="gbutton" class="g-signin2" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
   <div class="topbar not-selectable">
     <div id="profile" class="topbar-item" style="width: 100px" onclick="updateProfile()">Sync</div>
     <div id="back" class="topbar-item" style="display:none;" onclick="buttonBackClicked()">Back</div>
-    <div type="pool-button" id="create" class="topbar-item" style="display:none;" onclick="buttonCreateClicked()">Create label</div>
+    <div type="pool-button" id="create" class="topbar-item" style="display:none;" onclick="buttonCreateClicked()">Create</div>
     <div type="topbar-button" id="rename" class="topbar-item" style="display:none;" onclick="buttonRenameClicked()">Rename</div>
     <div type="topbar-button" id="delete" class="topbar-item" style="width: 60px;display:none;" onclick="buttonDeleteClicked()">Delete</div>
   </div>
-
-
 
   <div id="workspace" class="container not-selectable">
     <div id="data" class="flex-item data-area">
     </div>
     <div id="controls" class="fixed">
       <div id="pool" class="button notselected" onclick="showPool()"></div>
-      <!--<div id="mode" class="button notselected" onclick="toggleWorkingMode()">View</div>-->
       <div id="context" class="button notselected" onclick="toggleContext()">Labels</div>
+      <div id="context" class="button notselected" onclick="showHelp()">Help</div>
     </div>
   </div>
+
+  <!-- <div id="help" class="help-area text-area" style="display:none;">
+    <div>SWGOH Labels</div>
+    <div></div>
+    <div>Account sync:</div>
+    <div>This tool is designed to group SWGOH rosters, in order to have your roster available you should use the Profile button.</div>
+    <div>Once you enter your swgoh.gg account name a sync will be performed in order to collect your roster.</div>
+    <div>When you want your toons to be synced you should press that button and request the account ro (re)sync.</div>
+    <div></div>
+    <div>Labels</div>
+    <div>Labels are your group of toons, the groups that exist in game (categories) and the groups you are allowed to create.</div>
+    <div>Some usage examples of groups that can be created are teams that you use Raids, Territory Wars, Territory Battless, future
+      farms, etc...</div>
+    <div>To be able to create, remove and rename Labels you must sign-in using your google account. Once you have your own labels
+      they will be available to you for any account you decide to sync.</div>
+    <div>
+      <div id="gbutton" class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
+    </div>
+    <div>Hello world</div>
+  </div> -->
 
   <script>
     $(window).on('load', function () {
       main();
     })
+
+    function showHelp() {
+      if ($("div[id='data']").is(":visible")) {
+        $("div[id='data']").hide();
+        $("div[id='help']").show();
+      }
+      else {
+        $("div[id='data']").show();
+        $("div[id='help']").hide();
+      }
+
+    }
 
     function setStatus(status) {
       document.getElementById("profile").innerHTML = status;
@@ -107,7 +134,7 @@
       $workingMode = new workingMode();
       $context = new context();
       $selectedLabel = "";
-      
+
       document.getElementById("context").innerHTML = $context.description;
       refreshPool();
 
@@ -347,7 +374,7 @@
 
     function objectClicked(elem, id) {
       //if ($workingMode.value == $workingMode.workModes.select)
-        addToPool(elem, id);
+      addToPool(elem, id);
     }
 
     function labelClicked(label) {
@@ -438,8 +465,7 @@
       // filterAllLabels();
       // hideLabelButtons();
 
-      if ($selectedLabel == "")
-      {
+      if ($selectedLabel == "") {
         toggleContext();
         hideLabelButtons();
         return;
@@ -464,8 +490,7 @@
       }
     }
 
-    function buttonRenameClicked()
-    {
+    function buttonRenameClicked() {
       if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
         window.gapi.auth2.getAuthInstance().signIn().then(() => { renameSelectedLabel(); });
         return;
@@ -489,8 +514,7 @@
 
     }
 
-    function renameSelectedLabel()
-    {
+    function renameSelectedLabel() {
       var newName = prompt("Enter a new name to replace '" + $selectedLabel + "':", $selectedLabel);
 
       if (newName == null || newName == "")
@@ -534,8 +558,7 @@
         $("div[id='data']").children("div[id='" + labelObjectsIds[i] + "']").show();
     }
 
-    function showPool()
-    {
+    function showPool() {
       $context.setLabels();
       contextUpdated();
 
