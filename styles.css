@@ -119,6 +119,15 @@
   user-select: none;
 }
 
+.selectable {
+  -webkit-user-select: text;
+  -khtml-user-select: none;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -o-user-select: none;
+  user-select: text;
+}
+
 .container {
   display: flex;
   position: relative;
