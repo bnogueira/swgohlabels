@@ -1,5 +1,9 @@
 
 
+.container hr {
+  width: 100%;
+}
+
 .page-background {
   background: black;
 }
@@ -42,13 +46,6 @@
   font-weight: bold;
 }​
 
-.text-area {
-  height: 100%;
-  width: 100%;
-  padding-bottom: 10px;
-  padding-top: 1px;
-}
-
 .fixed {
   position: sticky;
   top: 0px;
@@ -62,21 +59,29 @@
   flex-wrap: wrap;
 }
 
-.help-area {
-  background: black;
-  color: white;
+.data-area {
+  background: linear-gradient(to bottom, #052353 0%, #000000 100%);
   max-height: 80vh;
-  /* overflow: auto; */
+  overflow: auto;
   padding-top: 10px;
 }
 
 .help-area {
+  background: black;
+  color: white;
+  /* max-height: 80vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-top: 1px; */
+}
+
+/* .help-area {
   background: linear-gradient(to bottom, #0b44a0 0%, #000000 100%);
   min-width: 80vh;
   min-height: 80vh;
   overflow: auto;
   padding-top: 10px;
-}
+} */
 
 .label {
   /*background: linear-gradient(to top right, #ffff00 0%, #ff6666 100%);*/

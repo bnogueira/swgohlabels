@@ -1,8 +1,14 @@
-function getObjectDesign(dataObject, deffered) {
+function getObjectDesign(dataObject, isSelected, deffered) {
     var gearImage = "";
     var levelAndStars = "";
     var image = $images[dataObject.uniqueName].src;
     var deferredTag = "";
+    var selected = "";
+
+    if (isSelected)
+        selected = "selected";
+    else
+        selected = "notselected";
 
     // defer images 
     if (deffered)
@@ -16,7 +22,7 @@ function getObjectDesign(dataObject, deffered) {
     }
 
     // design objects
-    return '<div class="player-char-portrait char-portrait-full notselected"' +
+    return '<div class="player-char-portrait char-portrait-full ' + selected + '"' +
         'onclick="objectClicked(this, &apos;' + dataObject.uniqueName + '&apos;)" id="' + dataObject.uniqueName + '">' +
         '<image ' + deferredTag +
         'style="background:url(' + image + '); background-size: 60px 60px; border-radius: 50%" ' +

@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-  <link rel="stylesheet" href="styles.css?version=1.7">
+  <link rel="stylesheet" href="styles.css?version=1.8">
   <script src="storage.js?version=1.6"></script>
   <script src="objectDesign.js?version=1.6"></script>
   <script src="labels.js?version=1.6"></script>
@@ -109,6 +109,7 @@
 
           var idToken = sessionStorage.getItem("signInToken");
           sessionStorage.setItem(idToken, true);
+          getData();
         }
       };
       console.log("sending idtoken");
@@ -344,23 +345,27 @@
     }
 
     function displayObjects(data, labels) {
-      var dataInnerHTML = localStorage.getItem('dataInnerHTML');
-      if (dataInnerHTML != null) {
-        document.getElementById("data").innerHTML = dataInnerHTML;
-        return;
+      var currentObjectsHTML = document.getElementById("data").innerHTML;
+      var oldObjectsHTML = localStorage.getItem('oldObjectsHTML');
+      var newHtml = "";
+
+      // add objects
+      for (var i = 0; i < data.length; i++)
+        newHtml += getObjectDesign(data[i], $pool.indexOf(data[i].uniqueName) >= 0, true);
+
+      // add labels
+      newHtml += $labels.displayLabels();
+
+      if ((currentObjectsHTML.length < 100) || (oldObjectsHTML != newHtml)) {
+        // display synced objects
+        document.getElementById("data").innerHTML = newHtml;
+        
+        // keep object's design for future requests
+        localStorage.setItem('oldObjectsHTML', newHtml);
       }
 
-      document.getElementById("data").innerHTML = "";
-
-      // displaying objects
-      for (var i = 0; i < data.length; i++)
-        document.getElementById("data").innerHTML += getObjectDesign(data[i], true);
-
-      // display labels
-      document.getElementById("data").innerHTML += $labels.displayLabels();
-
-      // keep object's design for future requests
-      localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
+      // update from pool
+      
     }
 
     function buildImagesIndex(data) {
