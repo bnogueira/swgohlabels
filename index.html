@@ -36,9 +36,9 @@
     <div id="data" class="flex-item data-area">
     </div>
     <div id="controls" class="fixed">
-      <div id="pool" class="button notselected" onclick="showPool()"></div>
       <div id="context" class="button notselected" onclick="toggleContext()">Labels</div>
       <div id="context" class="button notselected" onclick="showHelp()">Help</div>
+      <div id="pool" class="button notselected" onclick="showPool()"></div>
     </div>
   </div>
 
@@ -255,23 +255,23 @@
           console.log(response);
           var userLabels = JSON.parse(response);
           storeObjectInStorage("userLabels", userLabels);
-
-          $labels = new Labels($data);
-          buildImagesIndex($data);
-          displayObjects($data, $labels);
-          filterAllToons();
-          assignImages();
-          setStatus($profile);
+          refresh();
         });
       }
       else {
-        $labels = new Labels($data);
-        buildImagesIndex($data);
-        displayObjects($data, $labels);
-        filterAllToons();
-        assignImages();
-        setStatus($profile);
+        refresh();
       }
+    }
+
+    function refresh() {
+      $labels = new Labels($data);
+      buildImagesIndex($data);
+      displayObjects($data, $labels);
+      filterAllToons();
+      assignImages();
+      setStatus($profile);
+      $context.setToons();
+      contextUpdated();
     }
 
     function toggleWorkingMode() {
@@ -299,6 +299,12 @@
     }
 
     function refreshPool() {
+
+      if ($pool.length == 0)
+        document.getElementById("pool").style.display = "none";
+      else
+        document.getElementById("pool").style.display = "block";
+
       document.getElementById("pool").innerHTML = $pool.length;
     }
 
@@ -359,13 +365,13 @@
       if ((currentObjectsHTML.length < 100) || (oldObjectsHTML != newHtml)) {
         // display synced objects
         document.getElementById("data").innerHTML = newHtml;
-        
+
         // keep object's design for future requests
         localStorage.setItem('oldObjectsHTML', newHtml);
       }
 
       // update from pool
-      
+
     }
 
     function buildImagesIndex(data) {
