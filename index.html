@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-  <link rel="stylesheet" href="styles.css?version=1.8">
+  <link rel="stylesheet" href="styles.css?version=1.93">
   <script src="storage.js?version=1.6"></script>
   <script src="objectDesign.js?version=1.6"></script>
   <script src="labels.js?version=1.6"></script>
@@ -35,32 +35,31 @@
   <div id="workspace" class="container not-selectable">
     <div id="data" class="flex-item data-area">
     </div>
+    <div id="login-help" class="flex-item data-area help-area" style="display:none;">
+      <div>SWGOH Labels Help / Sign-in</div>
+      <hr>
+      <div>Account sync</div>
+      <hr>
+      <div>This tool is designed to group SWGOH toons. To have a player roster available you should use the Sync button.</div>
+      <div>Once you enter a swgoh.gg account name a sync will be performed in order to collect that account roster.</div>
+      <div>When you want to update the toons or fetch a different account you can use that button and request the account to (re)sync.</div>
+      <hr>
+      <div>Labels</div>
+      <hr>
+      <div>Labels are your groups of toons, the groups that exist in game (categories) and the groups you are allowed to create.</div>
+      <div>Some usage examples of groups that can be created are your teams that you use Raids, Territory Wars, Territory Battles,
+        your favorite toons, future farms, etc...</div>
+      <div>To be able to create, remove and rename Labels you must sign-in using your google account. Your labels will be available
+        to you for any swgoh.gg acount you decide to sync.</div>
+      <div>If you're not signed in when attempting to perform label operations the google sign in box will be presented for sign
+        in.</div>
+    </div>
     <div id="controls" class="fixed">
       <div id="context" class="button notselected" onclick="toggleContext()">Labels</div>
-      <div id="context" class="button notselected" onclick="showHelp()">Help</div>
+      <div id="help" class="button notselected" onclick="toggleHelp()">Help</div>
       <div id="pool" class="button notselected" onclick="showPool()"></div>
     </div>
   </div>
-
-  <!-- <div id="help" class="help-area text-area" style="display:none;">
-    <div>SWGOH Labels</div>
-    <div></div>
-    <div>Account sync:</div>
-    <div>This tool is designed to group SWGOH rosters, in order to have your roster available you should use the Profile button.</div>
-    <div>Once you enter your swgoh.gg account name a sync will be performed in order to collect your roster.</div>
-    <div>When you want your toons to be synced you should press that button and request the account ro (re)sync.</div>
-    <div></div>
-    <div>Labels</div>
-    <div>Labels are your group of toons, the groups that exist in game (categories) and the groups you are allowed to create.</div>
-    <div>Some usage examples of groups that can be created are teams that you use Raids, Territory Wars, Territory Battless, future
-      farms, etc...</div>
-    <div>To be able to create, remove and rename Labels you must sign-in using your google account. Once you have your own labels
-      they will be available to you for any account you decide to sync.</div>
-    <div>
-      <div id="gbutton" class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
-    </div>
-    <div>Hello world</div>
-  </div> -->
 
   <script>
     $(window).on('load', function () {
@@ -68,13 +67,31 @@
     })
 
     function showHelp() {
+      $("div[id='data']").hide();
+      $("div[id='context']").hide();
+      $("div[id='pool']").hide();
+      $("div[id='login-help']").show();
+    }
+
+    function hideHelp() {
+      // showElement("data");
+      // showElement("context");
+      // refreshPool();
+      //hideElement("login-help");
+
+      $("div[id='data']").show();
+      $("div[id='context']").show();
+      $("div[id='context']").show();
+      $("div[id='login-help']").hide();
+      refreshPool();
+    }
+
+    function toggleHelp() {
       if ($("div[id='data']").is(":visible")) {
-        $("div[id='data']").hide();
-        $("div[id='help']").show();
+        showHelp();
       }
       else {
-        $("div[id='data']").show();
-        $("div[id='help']").hide();
+        hideHelp();
       }
 
     }
@@ -298,12 +315,20 @@
         toggleContext();
     }
 
+    function showElement(elementId) {
+      document.getElementById(elementId).style.display = "block";
+    }
+
+    function hideElement(elementId) {
+      document.getElementById(elementId).style.display = "none";
+    }
+
     function refreshPool() {
 
       if ($pool.length == 0)
-        document.getElementById("pool").style.display = "none";
+        hideElement("pool");
       else
-        document.getElementById("pool").style.display = "block";
+        showElement("pool");
 
       document.getElementById("pool").innerHTML = $pool.length;
     }
