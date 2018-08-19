@@ -1,4 +1,9 @@
 
+
+.container hr {
+  width: 100%;
+}
+
 .page-background {
   background: black;
 }
@@ -12,7 +17,7 @@
 }
 
 .topbar {
-  height: 40px;
+  min-height: 40px;
   line-height: 40px;
   width: 95%;
   text-align: left;
@@ -55,11 +60,28 @@
 }
 
 .data-area {
-  background: linear-gradient(to bottom, #0b44a0 0%, #000000 100%);
+  background: linear-gradient(to bottom, #052353 0%, #000000 100%);
   max-height: 80vh;
   overflow: auto;
   padding-top: 10px;
 }
+
+.help-area {
+  background: black;
+  color: white;
+  /* max-height: 80vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-top: 1px; */
+}
+
+/* .help-area {
+  background: linear-gradient(to bottom, #0b44a0 0%, #000000 100%);
+  min-width: 80vh;
+  min-height: 80vh;
+  overflow: auto;
+  padding-top: 10px;
+} */
 
 .label {
   /*background: linear-gradient(to top right, #ffff00 0%, #ff6666 100%);*/
@@ -95,6 +117,15 @@
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+
+.selectable {
+  -webkit-user-select: text;
+  -khtml-user-select: none;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -o-user-select: none;
+  user-select: text;
 }
 
 .container {

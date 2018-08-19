@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-  <link rel="stylesheet" href="styles.css?version=1.6">
+  <link rel="stylesheet" href="styles.css?version=1.94">
   <script src="storage.js?version=1.6"></script>
   <script src="objectDesign.js?version=1.6"></script>
   <script src="labels.js?version=1.6"></script>
@@ -17,33 +17,55 @@
 
   <style>
   </style>
-
 </head>
 
 <body class="page-background">
-
-
   <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <a href="#" onclick="signOut();">Sign out</a> -->
 
-  <div id="gbutton" class="g-signin2" data-onsuccess="onSignIn" style="display:none;" data-onfailure="onSignInFailure"></div>
+  <div id="gbutton" class="g-signin2" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
   <div class="topbar not-selectable">
     <div id="profile" class="topbar-item" style="width: 100px" onclick="updateProfile()">Sync</div>
     <div id="back" class="topbar-item" style="display:none;" onclick="buttonBackClicked()">Back</div>
-    <div type="pool-button" id="create" class="topbar-item" style="display:none;" onclick="buttonCreateClicked()">Create label</div>
+    <div type="pool-button" id="create" class="topbar-item" style="display:none;" onclick="buttonCreateClicked()">Create</div>
     <div type="topbar-button" id="rename" class="topbar-item" style="display:none;" onclick="buttonRenameClicked()">Rename</div>
     <div type="topbar-button" id="delete" class="topbar-item" style="width: 60px;display:none;" onclick="buttonDeleteClicked()">Delete</div>
   </div>
 
-
-
   <div id="workspace" class="container not-selectable">
     <div id="data" class="flex-item data-area">
     </div>
+    <div id="login-help" class="flex-item data-area help-area" style="display:none;">
+      <div>SWGOH Labels Help / Sign-in</div>
+      <hr>
+      <div>Account sync</div>
+      <hr>
+      <div>This tool is designed to group SWGOH toons. To have a player roster available you should use the Sync button.</div>
+      <div>Once you enter a swgoh.gg account name a sync will be performed in order to collect that account roster.</div>
+      <div>When you want to update the toons or fetch a different account you can use that button and request the account to (re)sync.</div>
+      <hr>
+      <div>Labels</div>
+      <hr>
+      <div>A label is a group of toons, the groups that exist in game (categories) and the groups you are allowed to create.</div>
+      <div>An example of groups that can be created are specific teams for Raids, Territory Wars, Territory Battles, your favorite
+        toons, future farms and so on...</div>
+      <div>To be able to view, create, remove or rename Labels you must sign-in using your google account. Your labels will be
+        available to you for any swgoh.gg acount you decide to sync.</div>
+      <div>If you're not signed in when attempting to perform label operations the google sign in box will be presented.</div>
+      <hr>
+      <div>Contacts</div>
+      <hr>
+      <div style="width: 100%">Your feed back is welcome :)</div>
+      <div>email:&nbsp;</div>
+      <div class="selectable">canudo@swgohlabels.com</div>
+      <div style="width: 100%"></div>
+      <div>discord:&nbsp;</div>
+      <div class="selectable">https://discordapp.com/channels/437938117148803103/437938117152997377</div>
+    </div>
     <div id="controls" class="fixed">
-      <div id="pool" class="button notselected" onclick="showPool()"></div>
-      <!--<div id="mode" class="button notselected" onclick="toggleWorkingMode()">View</div>-->
-      <div id="context" class="button notselected" onclick="toggleContext()">Labels</div>
+      <div id="context" class="button notselected" style="display:none;" onclick="toggleContext()">Labels</div>
+      <div id="help" class="button notselected" onclick="toggleHelp()">Help</div>
+      <div id="pool" class="button notselected" style="display:none;" onclick="showPool()"></div>
     </div>
   </div>
 
@@ -51,6 +73,37 @@
     $(window).on('load', function () {
       main();
     })
+
+    function showHelp() {
+      $("div[id='data']").hide();
+      $("div[id='context']").hide();
+      $("div[id='pool']").hide();
+      $("div[id='login-help']").show();
+    }
+
+    function hideHelp() {
+      // showElement("data");
+      // showElement("context");
+      // refreshPool();
+      //hideElement("login-help");
+
+      $("div[id='data']").show();
+      $("div[id='login-help']").hide();
+      refreshPool();
+
+      if ($labels != null)
+        $("div[id='context']").show();
+    }
+
+    function toggleHelp() {
+      if ($("div[id='data']").is(":visible")) {
+        showHelp();
+      }
+      else {
+        hideHelp();
+      }
+
+    }
 
     function setStatus(status) {
       document.getElementById("profile").innerHTML = status;
@@ -82,6 +135,7 @@
 
           var idToken = sessionStorage.getItem("signInToken");
           sessionStorage.setItem(idToken, true);
+          getData();
         }
       };
       console.log("sending idtoken");
@@ -107,7 +161,7 @@
       $workingMode = new workingMode();
       $context = new context();
       $selectedLabel = "";
-      
+
       document.getElementById("context").innerHTML = $context.description;
       refreshPool();
 
@@ -176,6 +230,11 @@
 
       $data = result;
 
+      if ($profile == null) {
+        setStatus("Sync");
+        return;
+      }
+
       getXML(
         "https://script.google.com/macros/s/AKfycbxpqgsngbaUJ4xMl22o5VpAkz1oSpSzfIsw694CzfwyEc_GmeM/exec?user=" + $profile,
         addUserDataAndCreateIndex);
@@ -227,23 +286,23 @@
           console.log(response);
           var userLabels = JSON.parse(response);
           storeObjectInStorage("userLabels", userLabels);
-
-          $labels = new Labels($data);
-          buildImagesIndex($data);
-          displayObjects($data, $labels);
-          filterAllToons();
-          assignImages();
-          setStatus($profile);
+          refresh();
         });
       }
       else {
-        $labels = new Labels($data);
-        buildImagesIndex($data);
-        displayObjects($data, $labels);
-        filterAllToons();
-        assignImages();
-        setStatus($profile);
+        refresh();
       }
+    }
+
+    function refresh() {
+      $labels = new Labels($data);
+      buildImagesIndex($data);
+      displayObjects($data, $labels);
+      filterAllToons();
+      assignImages();
+      setStatus($profile);
+      $context.setToons();
+      contextUpdated();
     }
 
     function toggleWorkingMode() {
@@ -254,9 +313,16 @@
     function toggleContext() {
       $context.toggle();
       contextUpdated();
+
+      if ($context.value == $context.contexts.labels)
+        if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false)
+          window.gapi.auth2.getAuthInstance().signIn().then(onSignIn);
     }
 
     function contextUpdated() {
+      if ($labels != null)
+        $("div[id='context']").show();
+
       document.getElementById("context").innerHTML = $context.description;
 
       if ($context.value == $context.contexts.labels)
@@ -270,7 +336,21 @@
         toggleContext();
     }
 
+    function showElement(elementId) {
+      document.getElementById(elementId).style.display = "block";
+    }
+
+    function hideElement(elementId) {
+      document.getElementById(elementId).style.display = "none";
+    }
+
     function refreshPool() {
+
+      if ($pool.length == 0)
+        hideElement("pool");
+      else
+        showElement("pool");
+
       document.getElementById("pool").innerHTML = $pool.length;
     }
 
@@ -317,23 +397,27 @@
     }
 
     function displayObjects(data, labels) {
-      var dataInnerHTML = localStorage.getItem('dataInnerHTML');
-      if (dataInnerHTML != null) {
-        document.getElementById("data").innerHTML = dataInnerHTML;
-        return;
+      var currentObjectsHTML = document.getElementById("data").innerHTML;
+      var oldObjectsHTML = localStorage.getItem('oldObjectsHTML');
+      var newHtml = "";
+
+      // add objects
+      for (var i = 0; i < data.length; i++)
+        newHtml += getObjectDesign(data[i], $pool.indexOf(data[i].uniqueName) >= 0, true);
+
+      // add labels
+      newHtml += $labels.displayLabels();
+
+      if ((currentObjectsHTML.length < 100) || (oldObjectsHTML != newHtml)) {
+        // display synced objects
+        document.getElementById("data").innerHTML = newHtml;
+
+        // keep object's design for future requests
+        localStorage.setItem('oldObjectsHTML', newHtml);
       }
 
-      document.getElementById("data").innerHTML = "";
+      // update from pool
 
-      // displaying objects
-      for (var i = 0; i < data.length; i++)
-        document.getElementById("data").innerHTML += getObjectDesign(data[i], true);
-
-      // display labels
-      document.getElementById("data").innerHTML += $labels.displayLabels();
-
-      // keep object's design for future requests
-      localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
     }
 
     function buildImagesIndex(data) {
@@ -347,7 +431,7 @@
 
     function objectClicked(elem, id) {
       //if ($workingMode.value == $workingMode.workModes.select)
-        addToPool(elem, id);
+      addToPool(elem, id);
     }
 
     function labelClicked(label) {
@@ -431,6 +515,7 @@
       $profile = profile;
       clearLocalStorage();
       getData();
+      hideHelp();
       //setStatus($profile);
     }
 
@@ -438,8 +523,7 @@
       // filterAllLabels();
       // hideLabelButtons();
 
-      if ($selectedLabel == "")
-      {
+      if ($selectedLabel == "") {
         toggleContext();
         hideLabelButtons();
         return;
@@ -464,8 +548,7 @@
       }
     }
 
-    function buttonRenameClicked()
-    {
+    function buttonRenameClicked() {
       if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
         window.gapi.auth2.getAuthInstance().signIn().then(() => { renameSelectedLabel(); });
         return;
@@ -489,8 +572,7 @@
 
     }
 
-    function renameSelectedLabel()
-    {
+    function renameSelectedLabel() {
       var newName = prompt("Enter a new name to replace '" + $selectedLabel + "':", $selectedLabel);
 
       if (newName == null || newName == "")
@@ -534,8 +616,7 @@
         $("div[id='data']").children("div[id='" + labelObjectsIds[i] + "']").show();
     }
 
-    function showPool()
-    {
+    function showPool() {
       $context.setLabels();
       contextUpdated();
 
