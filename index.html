@@ -49,21 +49,23 @@
       <div>A label is a group of toons, the groups that exist in game (categories) and the groups you are allowed to create.</div>
       <div>An example of groups that can be created are specific teams for Raids, Territory Wars, Territory Battles, your favorite
         toons, future farms and so on...</div>
-      <div>To be able to view, create, remove or rename Labels you must sign-in using your google account. Your labels will be available
-        to you for any swgoh.gg acount you decide to sync.</div>
+      <div>To be able to view, create, remove or rename Labels you must sign-in using your google account. Your labels will be
+        available to you for any swgoh.gg acount you decide to sync.</div>
       <div>If you're not signed in when attempting to perform label operations the google sign in box will be presented.</div>
       <hr>
       <div>Contacts</div>
       <hr>
       <div style="width: 100%">Your feed back is welcome :)</div>
-      <div>email:&nbsp;</div><div class="selectable">canudo@swgohlabels.com</div>
+      <div>email:&nbsp;</div>
+      <div class="selectable">canudo@swgohlabels.com</div>
       <div style="width: 100%"></div>
-      <div>discord:&nbsp;</div><div class="selectable">https://discordapp.com/channels/437938117148803103/437938117152997377</div>
+      <div>discord:&nbsp;</div>
+      <div class="selectable">https://discordapp.com/channels/437938117148803103/437938117152997377</div>
     </div>
     <div id="controls" class="fixed">
-      <div id="context" class="button notselected" onclick="toggleContext()">Labels</div>
+      <div id="context" class="button notselected" style="display:none;" onclick="toggleContext()">Labels</div>
       <div id="help" class="button notselected" onclick="toggleHelp()">Help</div>
-      <div id="pool" class="button notselected" onclick="showPool()"></div>
+      <div id="pool" class="button notselected" style="display:none;" onclick="showPool()"></div>
     </div>
   </div>
 
@@ -86,10 +88,11 @@
       //hideElement("login-help");
 
       $("div[id='data']").show();
-      $("div[id='context']").show();
-      $("div[id='context']").show();
       $("div[id='login-help']").hide();
       refreshPool();
+
+      if ($labels != null)
+        $("div[id='context']").show();
     }
 
     function toggleHelp() {
@@ -227,6 +230,11 @@
 
       $data = result;
 
+      if ($profile == null) {
+        setStatus("Sync");
+        return;
+      }
+
       getXML(
         "https://script.google.com/macros/s/AKfycbxpqgsngbaUJ4xMl22o5VpAkz1oSpSzfIsw694CzfwyEc_GmeM/exec?user=" + $profile,
         addUserDataAndCreateIndex);
@@ -305,9 +313,16 @@
     function toggleContext() {
       $context.toggle();
       contextUpdated();
+
+      if ($context.value == $context.contexts.labels)
+        if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false)
+          window.gapi.auth2.getAuthInstance().signIn().then(onSignIn);
     }
 
     function contextUpdated() {
+      if ($labels != null)
+        $("div[id='context']").show();
+
       document.getElementById("context").innerHTML = $context.description;
 
       if ($context.value == $context.contexts.labels)
@@ -500,6 +515,7 @@
       $profile = profile;
       clearLocalStorage();
       getData();
+      hideHelp();
       //setStatus($profile);
     }
 
