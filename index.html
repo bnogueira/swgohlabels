@@ -9,9 +9,10 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="styles.css?version=1.94">
   <script src="storage.js?version=1.6"></script>
-  <script src="objectDesign.js?version=1.6"></script>
+  <script src="objects.js?version=1.6"></script>
   <script src="labels.js?version=1.6"></script>
   <script src="enums.js?version=1.6"></script>
 
@@ -28,8 +29,6 @@
     <div id="profile" class="topbar-item" style="width: 100px" onclick="updateProfile()">Sync</div>
     <div id="back" class="topbar-item" style="display:none;" onclick="buttonBackClicked()">Back</div>
     <div type="pool-button" id="create" class="topbar-item" style="display:none;" onclick="buttonCreateClicked()">Create</div>
-    <div type="topbar-button" id="rename" class="topbar-item" style="display:none;" onclick="buttonRenameClicked()">Rename</div>
-    <div type="topbar-button" id="delete" class="topbar-item" style="width: 60px;display:none;" onclick="buttonDeleteClicked()">Delete</div>
   </div>
 
   <div id="workspace" class="container not-selectable">
@@ -66,6 +65,28 @@
       <div id="context" class="button notselected" style="display:none;" onclick="toggleContext()">Labels</div>
       <div id="help" class="button notselected" onclick="toggleHelp()">Help</div>
       <div id="pool" class="button notselected" style="display:none;" onclick="showPool()"></div>
+      <div id="label-options" class="button notselected" onclick="openEditLabel()"></div>
+    </div>
+  </div>
+
+  <div class="w3-container">
+    <div id="label-options-modal" class="w3-modal" style="display:none;">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="closeEditLabel()" class="w3-button w3-display-topright">&times;</span>
+          <p>
+            <input id="label-options-modal-title" class="w3-input" type="text">
+          </p>
+          <hr>
+          <div class="w3-bar">
+            <button id="rename" class="w3-bar-item w3-green" style="width:33.3%" onclick="buttonRenameClicked()">Save</button>
+            <button id="cancel" class="w3-bar-item w3-black" style="width:33.3%" onclick="buttonRenameClicked()">Cancel</button>
+            <button id="delete" class="w3-bar-item w3-red" style="width:33.3%" onclick="buttonDeleteClicked()">Delete</button>
+          </div>
+          <div id="label-options-modal-toons">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -73,6 +94,18 @@
     $(window).on('load', function () {
       main();
     })
+
+    function openEditLabel()
+    {
+      document.getElementById('label-options-modal-title').value = $selectedLabel;
+      document.getElementById('label-options-modal-toons').innerHTML = $labels.getLabelEditDesign($selectedLabel, $data);
+      document.getElementById('label-options-modal').style.display='block';
+    }
+
+    function closeEditLabel()
+    {
+      document.getElementById('label-options-modal').style.display='none';
+    }
 
     function showHelp() {
       $("div[id='data']").hide();
@@ -154,6 +187,7 @@
     }
 
     function main() {
+      $objects = null;
       $labels = null;
       $profile = localStorage.getItem("profile");
       $images = new Object();
@@ -295,8 +329,9 @@
     }
 
     function refresh() {
-      $labels = new Labels($data);
       buildImagesIndex($data);
+      $objects = new Objects($data, $images);
+      $labels = new Labels($objects);
       displayObjects($data, $labels);
       filterAllToons();
       assignImages();
@@ -403,7 +438,8 @@
 
       // add objects
       for (var i = 0; i < data.length; i++)
-        newHtml += getObjectDesign(data[i], $pool.indexOf(data[i].uniqueName) >= 0, true);
+        //newHtml += getObjectDesign(data[i], $pool.indexOf(data[i].uniqueName) >= 0, true);
+        newHtml += $objects.getObjectDesign(i, $pool.indexOf(data[i].uniqueName) >= 0, true);
 
       // add labels
       newHtml += $labels.displayLabels();
