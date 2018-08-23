@@ -49,13 +49,13 @@ class Objects {
         var image = this.imagesIndex[objectUniqueName].src;
 
         var design =
-            "<li class=\"w3-bar\" style=\"height: 60px;\">" +
-            "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-bar-item w3-button w3-xlarge w3-right\">&times;</span>" +
-            "<img src=\"" + image + "\" class=\"w3-bar-item w3-circle\" style=\"width:60px\">" +
-            "<div class=\"w3-bar-item\">" +
-            "<span>" + name + "</span>" +
-            "</div>" +
-            "</li>";
+            "<div class=\"w3-container w3-bar w3-border\" style=\"height: 60px;\">" +
+                "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-bar-item w3-button w3-xlarge w3-right\">&times;</span>" +
+                "<img src=\"" + image + "\" class=\"w3-bar-item\" style=\"width:50px; border-radius: 50%; padding: 5px 0\">" +
+                "<div class=\"w3-bar-item\">" +
+                    "<span>" + name + "</span>" +
+                "</div>" +
+            "</div>";
         return design;
     }
 
