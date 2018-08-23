@@ -49,9 +49,9 @@ class Objects {
         var image = this.imagesIndex[objectUniqueName].src;
 
         var design =
-            "<li class=\"w3-bar\">" +
+            "<li class=\"w3-bar\" style=\"height: 60px;\">" +
             "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-bar-item w3-button w3-xlarge w3-right\">&times;</span>" +
-            "<img src=\"" + image + "\" class=\"w3-bar-item w3-circle\" style=\"width:85px\">" +
+            "<img src=\"" + image + "\" class=\"w3-bar-item w3-circle\" style=\"width:60px\">" +
             "<div class=\"w3-bar-item\">" +
             "<span>" + name + "</span>" +
             "</div>" +
