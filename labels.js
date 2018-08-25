@@ -7,11 +7,13 @@ class Labels {
         this.baseLabels = getObjectFromStorage('baseLabels');
 
         this.createBaseLabels(objects.objectsList);
+        this.baseLabels = this.sortLabels(this.baseLabels);
 
         if (this.userLabels != null)
         {
             delete this.userLabels[""];
             Labels.completeCollectionHierarchy(this.userLabels);
+            this.userLabels = this.sortLabels(this.userLabels);
         }
     }
 
@@ -31,6 +33,7 @@ class Labels {
     {
         this.deleteLabel(label);
         this.createLabel(newName, objectsList);
+        this.userLabels = this.sortLabels(this.userLabels);
     }
 
     getLabelEditDesign(label, dataCollection) {
@@ -124,6 +127,7 @@ class Labels {
 
         this.userLabels[label] = pool;
         Labels.completeHierarchy(this.userLabels, label);
+        this.useLabels = this.sortLabels(this.userLabels);
         storeObjectInStorage('userLabels', this.userLabels);
         return this.getLabelDesign(label);
     }
@@ -136,10 +140,31 @@ class Labels {
     renameLabel(from, to) {
         this.userLabels[to] = this.userLabels[from];
         delete this.userLabels[from];
+        this.userLabels = this.sortLabels(this.userLabels);
         storeObjectInStorage('userLabels', this.userLabels);
     }
 
     isUserLabel(label) {
         return (this.userLabels != null) && this.userLabels.hasOwnProperty(label) && (label!="");
     }
+
+    sortLabels(labels)
+    {
+        var sorted = {},
+        key, a = [];
+
+        for (key in labels) {
+            if (labels.hasOwnProperty(key)) {
+                a.push(key);
+            }
+        }
+
+        a.sort();
+
+        for (key = 0; key < a.length; key++) {
+            sorted[a[key]] = labels[a[key]];
+        }
+        return sorted;    
+    }
+
 }
