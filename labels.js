@@ -1,11 +1,12 @@
 
 
 class Labels {
-    constructor(data) {
+    constructor(objects) {
+        this.objects = objects;
         this.userLabels = getObjectFromStorage('userLabels');
         this.baseLabels = getObjectFromStorage('baseLabels');
 
-        this.createBaseLabels(data);
+        this.createBaseLabels(objects.objectsList);
 
         if (this.userLabels != null)
         {
@@ -24,6 +25,23 @@ class Labels {
         var hierarchy = label.split('.');
 
         return '<div id="' + label + '" class="label notselected" ' + clickEvent + hidden + '>' + hierarchy[hierarchy.length - 1] + '</div>';
+    }
+
+    updateLabel(label, newName, objectsList)
+    {
+        this.deleteLabel(label);
+        this.createLabel(newName, objectsList);
+    }
+
+    getLabelEditDesign(label, dataCollection) {
+
+        var labelToons = this.getLabelValue(label);
+        var design = "";
+
+        for (var i = 0; i < labelToons.length; i++)
+            design += this.objects.getObjectEditDesign(labelToons[i]);
+
+        return design;
     }
 
     getLabelValue(label) {
@@ -55,19 +73,19 @@ class Labels {
         return labelsHtml;
     }
 
-    createBaseLabels(data) {
+    createBaseLabels(objectsList) {
         if (this.baseLabels == null) {
             var root = "Categories."
             this.baseLabels = {};
 
-            // dig data and create labels
-            for (var i = 0; i < data.length; i++) {
-                for (var j = 0; j < data[i].factions.length; j++) {
-                    var labelName = root + data[i].factions[j];
+            // dig objectsList and create labels
+            for (var i = 0; i < objectsList.length; i++) {
+                for (var j = 0; j < objectsList[i].factions.length; j++) {
+                    var labelName = root + objectsList[i].factions[j];
 
                     if (this.baseLabels.hasOwnProperty(labelName) == false)
                         this.baseLabels[labelName] = [];
-                    this.baseLabels[labelName].push(data[i].uniqueName);
+                    this.baseLabels[labelName].push(objectsList[i].uniqueName);
                 }
             }
 
