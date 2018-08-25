@@ -27,6 +27,12 @@ class Labels {
         return '<div id="' + label + '" class="label notselected" ' + clickEvent + hidden + '>' + hierarchy[hierarchy.length - 1] + '</div>';
     }
 
+    updateLabel(label, newName, objectsList)
+    {
+        this.deleteLabel(label);
+        this.createLabel(newName, objectsList);
+    }
+
     getLabelEditDesign(label, dataCollection) {
 
         var labelToons = this.getLabelValue(label);
