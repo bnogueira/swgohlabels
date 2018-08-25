@@ -65,7 +65,7 @@
       <div id="context" class="button notselected" style="display:none;" onclick="toggleContext()">Labels</div>
       <div id="help" class="button notselected" onclick="toggleHelp()">Help</div>
       <div id="pool" class="button notselected" style="display:none;" onclick="showPool()"></div>
-      <div id="label-options" class="button notselected" onclick="openEditLabel()">Edit</div>
+      <div id="label-options" class="button notselected" style="display:none;" onclick="openEditLabel()">Edit</div>
     </div>
   </div>
 
@@ -120,7 +120,18 @@
       }
 
       $labels.updateLabel($selectedLabel, newName, objectsList);
+
+      ///
+      ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
+      localStorage.removeItem('dataInnerHTML');
+      displayObjects($data, $labels);
+      filterAllLabels();
+      assignImages();
+      setStatus($profile);
+      ///
+
       closeEditLabel();
+      
     }
 
     function showHelp() {
@@ -646,7 +657,7 @@
 
 
     function hideLabelButtons() {
-      $("div[type='label-options']").hide();
+      $("div[id='label-options']").hide();
       $("div[type='pool-button']").hide();
       $("div[id='profile']").show();
     }
@@ -656,10 +667,12 @@
 
       if ($labels.isUserLabel(label)) {
         $("div[type='topbar-button']").show();
-        $("div[type='label-options']").show();
+        $("div[id='label-options']").show();
       }
-      else
+      else {
         $("div[id='back']").show();
+        $("div[id='label-options']").hide();
+      }
 
       // hide all
       $("div[id='data']").children("div").hide();
