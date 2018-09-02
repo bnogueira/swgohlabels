@@ -49,7 +49,7 @@ class Objects {
         var image = this.imagesIndex[objectUniqueName].src;
 
         var design =
-            "<div class=\"w3-container w3-bar w3-border\" style=\"height: 60px;\" object-id=\"" + objectUniqueName + "\">" +
+            "<div class=\"w3-container w3-bar w3-border w3-border-gray\" style=\"color: cyan; height: 60px;\" object-id=\"" + objectUniqueName + "\">" +
                 "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-bar-item w3-button w3-xlarge w3-right\">&times;</span>" +
                 "<img src=\"" + image + "\" class=\"w3-bar-item\" style=\"width:50px; border-radius: 50%; padding: 5px 0\">" +
                 "<div class=\"w3-bar-item\">" +

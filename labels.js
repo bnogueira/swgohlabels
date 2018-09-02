@@ -31,18 +31,24 @@ class Labels {
 
     updateLabel(label, newName, objectsList)
     {
-        this.deleteLabel(label);
+        if (label != null)
+            this.deleteLabel(label);
+            
         this.createLabel(newName, objectsList);
         this.userLabels = this.sortLabels(this.userLabels);
     }
 
     getLabelEditDesign(label, dataCollection) {
-
         var labelToons = this.getLabelValue(label);
+        
+        return this.getLabelCreateDesign(labelToons);
+    }
+
+    getLabelCreateDesign(objectsList) {
         var design = "";
 
-        for (var i = 0; i < labelToons.length; i++)
-            design += this.objects.getObjectEditDesign(labelToons[i]);
+        for (var i = 0; i < objectsList.length; i++)
+            design += this.objects.getObjectEditDesign(objectsList[i]);
 
         return design;
     }
