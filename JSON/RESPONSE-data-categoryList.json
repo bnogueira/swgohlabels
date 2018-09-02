@@ -1,0 +1,2470 @@
+[
+    {
+        "_id": "5b8b592f3c42e42e3ce4c497",
+        "id": "longitudinally_implemented",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c498",
+        "id": "targeting_sets_exclude",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c499",
+        "id": "cannot_evade",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c49a",
+        "id": "any_obtainable",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c49b",
+        "id": "suppress_death",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c49c",
+        "id": "percent_health_resistant",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c49d",
+        "id": "character_fleetcommander",
+        "descKey": "Fleet Commander",
+        "visible": true,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c49e",
+        "id": "species_ewok",
+        "descKey": "Ewok",
+        "visible": true,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c49f",
+        "id": "species_human",
+        "descKey": "Human",
+        "visible": false,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a0",
+        "id": "species_droid",
+        "descKey": "Droid",
+        "visible": true,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a1",
+        "id": "species_jawa",
+        "descKey": "Jawa",
+        "visible": true,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a2",
+        "id": "species_tusken",
+        "descKey": "Tusken",
+        "visible": true,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a3",
+        "id": "species_geonosian",
+        "descKey": "Geonosian",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a4",
+        "id": "species_wookiee",
+        "descKey": "Wookiee",
+        "visible": false,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a5",
+        "id": "unittype_burnerxp",
+        "descKey": "Burner",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a6",
+        "id": "alignment_dark",
+        "descKey": "Dark Side",
+        "visible": false,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a7",
+        "id": "alignment_light",
+        "descKey": "Light Side",
+        "visible": false,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a8",
+        "id": "alignment_neutral",
+        "descKey": "Neutral",
+        "visible": false,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4a9",
+        "id": "profession_clonetrooper",
+        "descKey": "Clone Trooper",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4aa",
+        "id": "profession_jedi",
+        "descKey": "Jedi",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ab",
+        "id": "profession_scoundrel",
+        "descKey": "Scoundrel",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ac",
+        "id": "profession_sith",
+        "descKey": "Sith",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ad",
+        "id": "profession_bountyhunter",
+        "descKey": "Bounty Hunter",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ae",
+        "id": "profession_smuggler",
+        "descKey": "Smuggler",
+        "visible": false,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4af",
+        "id": "shipclass_fighter",
+        "descKey": "CATEGORY_FIGHTER_DESC",
+        "visible": false,
+        "uiFilterList": [
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b0",
+        "id": "shipclass_freighter",
+        "descKey": "CATEGORY_FREIGHTER_DESC",
+        "visible": false,
+        "uiFilterList": [
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b1",
+        "id": "shipclass_capitalship",
+        "descKey": "CATEGORY_CAPITAL_DESC",
+        "visible": false,
+        "uiFilterList": [
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b2",
+        "id": "shipclass_cargoship",
+        "descKey": "Cargo Ship",
+        "visible": true,
+        "uiFilterList": [
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b3",
+        "id": "shipclass_corvette",
+        "descKey": "CATEGORY_CORVETTE_DESC",
+        "visible": false,
+        "uiFilterList": [
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b4",
+        "id": "shipclass_dreadnaught",
+        "descKey": "CATEGORY_DREADNAUGHT_DESC",
+        "visible": false,
+        "uiFilterList": [
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b5",
+        "id": "affiliation_rebels",
+        "descKey": "Rebel",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b6",
+        "id": "affiliation_phoenix",
+        "descKey": "Phoenix",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b7",
+        "id": "affiliation_rogue_one",
+        "descKey": "Rogue One",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b8",
+        "id": "affiliation_republic",
+        "descKey": "Galactic Republic",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4b9",
+        "id": "affiliation_oldrepublic",
+        "descKey": "Old Republic",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ba",
+        "id": "affiliation_empire",
+        "descKey": "Empire",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4bb",
+        "id": "affiliation_imperialtrooper",
+        "descKey": "Imperial Trooper",
+        "visible": true,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4bc",
+        "id": "affiliation_nightsisters",
+        "descKey": "Nightsister",
+        "visible": true,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4bd",
+        "id": "affiliation_resistance",
+        "descKey": "Resistance",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4be",
+        "id": "affiliation_firstorder",
+        "descKey": "First Order",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4bf",
+        "id": "affiliation_separatist",
+        "descKey": "Separatist",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c0",
+        "id": "selftag_aaylasecura",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c1",
+        "id": "selftag_administratorlando",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c2",
+        "id": "selftag_admiralackbar",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c3",
+        "id": "selftag_anakinknight",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c4",
+        "id": "selftag_asajventriss",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c5",
+        "id": "selftag_oomcommandbattledroid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c6",
+        "id": "selftag_hothleia",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c7",
+        "id": "selftag_hothrebelscout",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c8",
+        "id": "selftag_hothrebelsoldier",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4c9",
+        "id": "selftag_ahsokatano",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ca",
+        "id": "selftag_biggsdarklighter",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4cb",
+        "id": "selftag_wedgeantilles",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4cc",
+        "id": "selftag_bobafett",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4cd",
+        "id": "selftag_cadbane",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ce",
+        "id": "selftag_phasma",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4cf",
+        "id": "selftag_cassianandor",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d0",
+        "id": "selftag_cc2224",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d1",
+        "id": "selftag_chewbacca",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d2",
+        "id": "selftag_chiefchirpa",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d3",
+        "id": "selftag_chiefnebit",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d4",
+        "id": "selftag_choppers3",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d5",
+        "id": "selftag_clonewarschewbacca",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d6",
+        "id": "selftag_clonesergeantphase1",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d7",
+        "id": "selftag_coruscantunderworldpolice",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d8",
+        "id": "selftag_countdooku",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4d9",
+        "id": "selftag_ct5555",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4da",
+        "id": "selftag_ct7567",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4db",
+        "id": "selftag_ct210408",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4dc",
+        "id": "selftag_daka",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4dd",
+        "id": "selftag_maul",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4de",
+        "id": "selftag_darthsidious",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4df",
+        "id": "selftag_vader",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e0",
+        "id": "selftag_dathcha",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e1",
+        "id": "selftag_dengar",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e2",
+        "id": "selftag_ewokelder",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e3",
+        "id": "selftag_finn",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e4",
+        "id": "selftag_firstorderofficermale",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e5",
+        "id": "selftag_veers",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e6",
+        "id": "selftag_garsaxon",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e7",
+        "id": "selftag_geonosiansoldier",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e8",
+        "id": "selftag_grandmasteryoda",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4e9",
+        "id": "selftag_grandmofftarkin",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ea",
+        "id": "selftag_greedo",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4eb",
+        "id": "selftag_hansolo",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ec",
+        "id": "selftag_herasyndullas3",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ed",
+        "id": "selftag_hk47",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ee",
+        "id": "selftag_magnaguard",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ef",
+        "id": "selftag_ig86sentineldroid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f0",
+        "id": "selftag_ig88",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f1",
+        "id": "selftag_imagundi",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f2",
+        "id": "selftag_jawa",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f3",
+        "id": "selftag_jawaengineer",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f4",
+        "id": "selftag_jawascavenger",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f5",
+        "id": "selftag_jediknightconsular",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f6",
+        "id": "selftag_jediknightguardian",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f7",
+        "id": "selftag_k2so",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f8",
+        "id": "selftag_kitfisto",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4f9",
+        "id": "selftag_kyloren",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4fa",
+        "id": "selftag_lobot",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4fb",
+        "id": "selftag_lukeskywalker",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4fc",
+        "id": "selftag_magmatrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4fd",
+        "id": "selftag_nightsisteracolyte",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4fe",
+        "id": "selftag_nightsisterinitiate",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c4ff",
+        "id": "selftag_nutegunray",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c500",
+        "id": "selftag_oldbenkenobi",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c501",
+        "id": "selftag_plokoon",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c502",
+        "id": "selftag_poe",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c503",
+        "id": "selftag_pogglethelesser",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c504",
+        "id": "selftag_princessleia",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c505",
+        "id": "selftag_quigonjinn",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c506",
+        "id": "selftag_resistancepilot",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c507",
+        "id": "selftag_rey",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c508",
+        "id": "selftag_sabinewrens3",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c509",
+        "id": "selftag_savageopress",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c50a",
+        "id": "selftag_shoretrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c50b",
+        "id": "selftag_snowtrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c50c",
+        "id": "selftag_snowtroopercommander",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c50d",
+        "id": "selftag_snowtrooperops",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c50e",
+        "id": "selftag_stormtrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c50f",
+        "id": "selftag_sunfac",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c510",
+        "id": "selftag_teebo",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c511",
+        "id": "selftag_tiefighterimperial",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c512",
+        "id": "selftag_tiefighterpilot",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c513",
+        "id": "selftag_tuskenraider",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c514",
+        "id": "selftag_ugnaught",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c515",
+        "id": "selftag_eethkoth",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c516",
+        "id": "selftag_royalguard",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c517",
+        "id": "selftag_talia",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c518",
+        "id": "selftag_supportdroid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c519",
+        "id": "selftag_supportdroid_mk5",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c51a",
+        "id": "selftag_barrissoffee",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c51b",
+        "id": "selftag_luminaraunduli",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c51c",
+        "id": "selftag_humanthug",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c51d",
+        "id": "selftag_urorrurrr",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c51e",
+        "id": "selftag_resistancetrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c51f",
+        "id": "selftag_stormtrooperhan",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c520",
+        "id": "selftag_macewindu",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c521",
+        "id": "selftag_firstordertiepilot",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c522",
+        "id": "selftag_firstordertrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c523",
+        "id": "selftag_wampa",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c524",
+        "id": "selftag_grievous",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c525",
+        "id": "selftag_zamwesell",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c526",
+        "id": "selftag_ewokscout",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c527",
+        "id": "selftag_tuskenshaman",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c528",
+        "id": "selftag_rancordoorfunctional",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c529",
+        "id": "selftag_rancordoordestroyed",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c52a",
+        "id": "selftag_rancor",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c52b",
+        "id": "selftag_gamorreancaptain",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c52c",
+        "id": "selftag_gamorreanguard",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c52d",
+        "id": "selftag_aat",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c52e",
+        "id": "selftag_b2rocket",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c52f",
+        "id": "selftag_dummy_airstrike",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c530",
+        "id": "aat_weapons_functional",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c531",
+        "id": "aat_weapons_destroyed",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c532",
+        "id": "selftag_aat_cannon_left_destroyed",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c533",
+        "id": "selftag_aat_cannon_right_destroyed",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c534",
+        "id": "selftag_aat_turret_destroyed",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c535",
+        "id": "selftag_aat_cannon_left_functional",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c536",
+        "id": "selftag_aat_cannon_right_functional",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c537",
+        "id": "selftag_aat_sidegun_functional",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c538",
+        "id": "selftag_aat_turret_functional",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c539",
+        "id": "selftag_aat_turret02",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c53a",
+        "id": "selftag_b2superbattledroid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c53b",
+        "id": "selftag_b1battledroid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c53c",
+        "id": "selftag_geonosianspy",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c53d",
+        "id": "selftag_ezrabridgers3",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c53e",
+        "id": "selftag_embo",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c53f",
+        "id": "selftag_emperorpalpatine",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c540",
+        "id": "selftag_scarifrebel",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c541",
+        "id": "selftag_generalkenobi",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c542",
+        "id": "selftag_bistan",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c543",
+        "id": "selftag_chirrutimwe",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c544",
+        "id": "selftag_bazemalbus",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c545",
+        "id": "selftag_jynerso",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c546",
+        "id": "selftag_directorkrennic",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c547",
+        "id": "selftag_deathtrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c548",
+        "id": "selftag_darthnihilus",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c549",
+        "id": "selftag_kananjarruss3",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c54a",
+        "id": "selftag_sithassassin",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c54b",
+        "id": "selftag_sithtrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c54c",
+        "id": "selftag_zebs3",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c54d",
+        "id": "selftag_pao",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c54e",
+        "id": "selftag_bodhirook",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c54f",
+        "id": "selftag_imperialsupercommando",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c550",
+        "id": "selftag_rebelsoldier",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c551",
+        "id": "selftag_rebelpilot",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c552",
+        "id": "selftag_r2d2_legendary",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c553",
+        "id": "selftag_fulcrumahsoka",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c554",
+        "id": "selftag_imperialscoutdroid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c555",
+        "id": "selftag_grandadmiralthrawn",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c556",
+        "id": "selftag_commanderlukeskywalker",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c557",
+        "id": "selftag_logray",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c558",
+        "id": "selftag_paploo",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c559",
+        "id": "selftag_wicket",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c55a",
+        "id": "selftag_hothhan",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c55b",
+        "id": "selftag_hermityoda",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c55c",
+        "id": "selftag_stormtroopercommandertb",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c55d",
+        "id": "selftag_atstdrivertb",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c55e",
+        "id": "selftag_smugglerchewbacca",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c55f",
+        "id": "selftag_smugglerhan",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c560",
+        "id": "selftag_bb8",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c561",
+        "id": "selftag_nightsisterspirit",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c562",
+        "id": "selftag_nightsisterzombie",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c563",
+        "id": "selftag_mothertalzin",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c564",
+        "id": "selftag_firstorderspecialforcespilot",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c565",
+        "id": "selftag_kylorenunmasked",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c566",
+        "id": "selftag_colonelstarck",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c567",
+        "id": "selftag_imperialprobedroid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c568",
+        "id": "selftag_reyjeditraining",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c569",
+        "id": "selftag_pve_rebelofficer",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c56a",
+        "id": "selftag_amilynholdo",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c56b",
+        "id": "selftag_pve_amilynholdo",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c56c",
+        "id": "selftag_rosetico",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c56d",
+        "id": "selftag_pve_rosetico",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c56e",
+        "id": "selftag_pve_rebelcommander",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c56f",
+        "id": "selftag_firstorderexecutioner",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c570",
+        "id": "selftag_foriotcontrolstormtrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c571",
+        "id": "selftag_sithmarauder",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c572",
+        "id": "selftag_darthsion",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c573",
+        "id": "selftag_darthtraya",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c574",
+        "id": "selftag_visasmarr",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c575",
+        "id": "selftag_darthtraya_sithraid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c576",
+        "id": "selftag_darthsion_sithraid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c577",
+        "id": "selftag_sithmarauder_sithraid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c578",
+        "id": "selftag_bossk",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c579",
+        "id": "selftag_younghan",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c57a",
+        "id": "selftag_youngchewbacca",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c57b",
+        "id": "selftag_qira",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c57c",
+        "id": "selftag_enfysnest",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c57d",
+        "id": "selftag_l3_37",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c57e",
+        "id": "selftag_younglando",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c57f",
+        "id": "selftag_rangetrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c580",
+        "id": "selftag_bastilashan",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c581",
+        "id": "selftag_joleebindo",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c582",
+        "id": "selftag_sithcommando",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c583",
+        "id": "selftag_zaalbar",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c584",
+        "id": "selftag_missionvao",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c585",
+        "id": "selftag_t3_m4",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c586",
+        "id": "selftag_aurrasing",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c587",
+        "id": "selftag_obj_crate_01",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c588",
+        "id": "selftag_obj_crate_02",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c589",
+        "id": "selftag_obj_crate_03",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c58a",
+        "id": "type_object",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c58b",
+        "id": "selftag_obj_nightsister_altar",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c58c",
+        "id": "selftag_obj_nightsister_flame",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c58d",
+        "id": "selftag_obj_darthtraya_lightsaber01_sithraid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c58e",
+        "id": "selftag_obj_darthtraya_lightsaber02_sithraid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c58f",
+        "id": "selftag_obj_darthtraya_lightsaber03_sithraid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c590",
+        "id": "type_vehicle",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c591",
+        "id": "selftag_atst",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c592",
+        "id": "selftag_slave1",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c593",
+        "id": "selftag_tieadvanced",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c594",
+        "id": "selftag_tiebomber",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c595",
+        "id": "selftag_xwingred3",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c596",
+        "id": "selftag_xwingresistance",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c597",
+        "id": "selftag_tiefighterfirstorder",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c598",
+        "id": "selftag_xanadublood",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c599",
+        "id": "selftag_millenniumfalconep7",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c59a",
+        "id": "selftag_millenniumfalconpristine",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c59b",
+        "id": "selftag_vulturedroid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c59c",
+        "id": "selftag_jedistarfighterconsular",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c59d",
+        "id": "selftag_xwingred2",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c59e",
+        "id": "selftag_xwingred5",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c59f",
+        "id": "selftag_geonosianstarfighter2",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a0",
+        "id": "selftag_geonosianstarfighter3",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a1",
+        "id": "selftag_sithinfiltrator",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a2",
+        "id": "selftag_jedistarfighteranakin",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a3",
+        "id": "selftag_geonosianstarfighter1",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a4",
+        "id": "selftag_capitalstardestroyer",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a5",
+        "id": "selftag_capitaldroidcontrolship",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a6",
+        "id": "selftag_bladeofdorin",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a7",
+        "id": "selftag_arc170clonesergeant",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a8",
+        "id": "selftag_arc170rex",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5a9",
+        "id": "selftag_h2executiveshuttle",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5aa",
+        "id": "selftag_droidbomber",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5ab",
+        "id": "selftag_capitalmoncalamaricruiser",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5ac",
+        "id": "selftag_jedistarfighterahsokatano",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5ad",
+        "id": "selftag_jedistarfighteryoda",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5ae",
+        "id": "selftag_umbaranstarfighter",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5af",
+        "id": "selftag_capitaljedicruiser",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b0",
+        "id": "selftag_commandshuttle",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b1",
+        "id": "selftag_xwingblackone",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b2",
+        "id": "selftag_uwingrogueone",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b3",
+        "id": "selftag_uwingscarif",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b4",
+        "id": "selftag_tiereaper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b5",
+        "id": "selftag_ghost",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b6",
+        "id": "selftag_phantom2",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b7",
+        "id": "selftag_gauntletstarfighter",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b8",
+        "id": "selftag_capitalchimaera",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5b9",
+        "id": "selftag_tiefighterfosf",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5ba",
+        "id": "selftag_tiesilencer",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5bb",
+        "id": "selftag_sithfighter",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5bc",
+        "id": "selftag_houndstooth",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5bd",
+        "id": "ship_category_falcon",
+        "descKey": "Droid",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5be",
+        "id": "ship_category_wings",
+        "descKey": "Droid",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5bf",
+        "id": "ship_category_ties",
+        "descKey": "Droid",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c0",
+        "id": "role_attacker",
+        "descKey": "Attacker",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c1",
+        "id": "role_tank",
+        "descKey": "Tank",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c2",
+        "id": "role_support",
+        "descKey": "Support",
+        "visible": true,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c3",
+        "id": "role_healer",
+        "descKey": "Healer",
+        "visible": true,
+        "uiFilterList": [
+            1
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c4",
+        "id": "role_capital",
+        "descKey": "Capital Ship",
+        "visible": true,
+        "uiFilterList": [
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c5",
+        "id": "role_capital_empire",
+        "descKey": "Empire",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c6",
+        "id": "role_capital_republic",
+        "descKey": "Republic",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c7",
+        "id": "role_capital_rebel",
+        "descKey": "Rebel",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c8",
+        "id": "admiral",
+        "descKey": "ADMIRAL",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5c9",
+        "id": "role_horde",
+        "descKey": "Horde",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5ca",
+        "id": "role_raidboss",
+        "descKey": "Horde",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5cb",
+        "id": "role_respawner",
+        "descKey": "Horde",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5cc",
+        "id": "unit_xwing",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5cd",
+        "id": "territory_hoth",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5ce",
+        "id": "territory_hoth_empire",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5cf",
+        "id": "territory_hoth_hero_rebel",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d0",
+        "id": "territory_light_platoon",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d1",
+        "id": "territory_dark_platoon",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d2",
+        "id": "territory_ship_platoon",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d3",
+        "id": "territory_rare_ship_platoon",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d4",
+        "id": "dark_marquee_unit",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d5",
+        "id": "specialmission_corerebels",
+        "descKey": "Rebel",
+        "visible": false,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d6",
+        "id": "specialmission_legendarylight",
+        "descKey": "Rebel",
+        "visible": false,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d7",
+        "id": "platoon_legendary_light",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d8",
+        "id": "platoon_legendary_dark",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5d9",
+        "id": "platoon_legendary_restricted",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5da",
+        "id": "specialmission_rogueone",
+        "descKey": "Rebel",
+        "visible": false,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5db",
+        "id": "specialmission_empire",
+        "descKey": "Empire",
+        "visible": false,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5dc",
+        "id": "specialmission_bountyhunter",
+        "descKey": "Bounty Hunter",
+        "visible": false,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5dd",
+        "id": "specialmission_imperialtrooper",
+        "descKey": "Imperial Trooper",
+        "visible": false,
+        "uiFilterList": [
+            1,
+            2
+        ]
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5de",
+        "id": "quest_snowtrooper",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5df",
+        "id": "quest_imperial_probe_droid",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5e0",
+        "id": "quest_gamorreanguard",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5e1",
+        "id": "quest_raid_thepit",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5e2",
+        "id": "quest_raid_sithtri",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5e3",
+        "id": "quest_darthnihilus",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5e4",
+        "id": "quest_darthsion",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    },
+    {
+        "_id": "5b8b592f3c42e42e3ce4c5e5",
+        "id": "quest_aat",
+        "descKey": "Placeholder",
+        "visible": false,
+        "uiFilterList": []
+    }
+]

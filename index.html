@@ -25,17 +25,12 @@
   <a href="#" onclick="signOut();">Sign out</a> -->
 
   <div id="gbutton" class="g-signin2" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
-  <!-- <div class="topbar not-selectable">
-    <div id="profile" class="topbar-item" style="width: 100px" onclick="updateProfile()">Sync</div>
-    <div id="back" class="topbar-item" style="display:none;" onclick="buttonBackClicked()">Back</div>
-  </div> -->
 
   <div class="w3-container" style="background: linear-gradient(to bottom, #0b44a0 0%, #000000 100%);">
     <div class="w3-bar">
       <button id="profile" class="w3-button w3-light-blue w3-padding-small" style="margin: 5px;" onclick="updateProfile()">Sync</button>
       <button id="back" class="w3-button w3-light-blue w3-padding-small" style="margin: 5px;" onclick="buttonBackClicked()">Back</button>
       <div class="w3-bar-item w3-text-blue-grey w3-right w3-tiny">1.30</div>
-      <!-- w3-padding-small -->
     </div>
   </div>
 
@@ -589,46 +584,6 @@
       refreshPool();
     }
 
-    // function buttonCreateClicked() {
-    //   if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
-    //     //window.gapi.auth2.getAuthInstance().signIn().then(() => { signedInCreateLabel(label); });
-    //     window.gapi.auth2.getAuthInstance().signIn().then(onSignIn);
-    //     return;
-    //   }
-    //   else {
-    //     var label = prompt("What is the label name?");
-
-    //     if (label == null || label == "")
-    //       return;
-
-    //     signedInCreateLabel(label);
-    //   }
-    // }
-
-    // function signedInCreateLabel(label) {
-    //   // unselect objects
-    //   for (var i = 0; i < $pool.length; i++) {
-    //     $("div[id='data']").children("div[id='" + $pool[i] + "']").toggleClass("selected notselected");
-    //   }
-
-    //   // create label
-    //   var newLabelHtml = $labels.createLabel(label, $pool);
-    //   $pool = [];
-    //   refreshPool();
-
-    //   // add to displayed data
-    //   document.getElementById("data").innerHTML = newLabelHtml + document.getElementById("data").innerHTML;
-
-    //   // save the html for later sage
-    //   localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
-
-    //   // save labels in the database
-    //   ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
-
-    //   $context.setLabels();
-    //   contextUpdated();
-    // }
-
     function getUserLabelsResult(response) {
       console.log(response);
     }
@@ -669,16 +624,6 @@
       filterByLabel(parent);
     }
 
-    // function buttonRenameClicked() {
-    //   if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
-    //     window.gapi.auth2.getAuthInstance().signIn().then(() => { renameSelectedLabel(); });
-    //     return;
-    //   }
-    //   else {
-    //     renameSelectedLabel();
-    //   }
-    // }
-
     function deleteSelectedLabel() {
       setStatus("updating data...");
 
@@ -692,27 +637,6 @@
       setStatus($profile);
 
     }
-
-    // function renameSelectedLabel() {
-    //   var newName = prompt("Enter a new name to replace '" + $selectedLabel + "':", $selectedLabel);
-
-    //   if (newName == null || newName == "")
-    //     return;
-
-    //   hideLabelButtons();
-    //   setStatus("updating data...");
-    //   $labels.renameLabel($selectedLabel, newName);
-    //   $selectedLabel = newName;
-
-    //   ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
-    //   localStorage.removeItem('dataInnerHTML');
-
-    //   displayObjects($data, $labels);
-    //   filterAllLabels();
-    //   assignImages();
-    //   setStatus($profile);
-    // }
-
 
     function hideLabelButtons() {
       $("div[id='label-options']").hide();

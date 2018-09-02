@@ -1,0 +1,2588 @@
+{
+    "MAGMATROOPER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 41,
+            "gearLevel": 4,
+            "gear": [
+                "050",
+                "068"
+            ],
+            "zetas": [],
+            "gp": 5606,
+            "type": 1
+        }
+    ],
+    "ZEBS3": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 8,
+            "gear": [
+                "108",
+                "113",
+                "055"
+            ],
+            "zetas": [],
+            "gp": 12062,
+            "type": 1
+        }
+    ],
+    "BARRISSOFFEE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 71,
+            "gearLevel": 6,
+            "gear": [
+                "076",
+                "055",
+                "048",
+                "083",
+                "088"
+            ],
+            "zetas": [],
+            "gp": 5628,
+            "type": 1
+        }
+    ],
+    "R2D2_LEGENDARY": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [
+                "163",
+                "165",
+                "158"
+            ],
+            "zetas": [
+                "uniqueskill_R2D2_LEGENDARY01",
+                "uniqueskill_R2D2_LEGENDARY02"
+            ],
+            "gp": 22910,
+            "type": 1
+        }
+    ],
+    "HUMANTHUG": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 2,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 452,
+            "type": 1
+        }
+    ],
+    "TIEFIGHTERFOSF": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 64,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1555.5,
+            "type": 2
+        }
+    ],
+    "BB8": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [
+                "161",
+                "159"
+            ],
+            "zetas": [
+                "uniqueskill_BB801"
+            ],
+            "gp": 20231,
+            "type": 1
+        }
+    ],
+    "GARSAXON": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "POGGLETHELESSER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 40,
+            "gearLevel": 4,
+            "gear": [
+                "031",
+                "027",
+                "070",
+                "068"
+            ],
+            "zetas": [],
+            "gp": 5970,
+            "type": 1
+        }
+    ],
+    "CORUSCANTUNDERWORLDPOLICE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 1,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 302,
+            "type": 1
+        }
+    ],
+    "FIRSTORDERSPECIALFORCESPILOT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 55,
+            "gearLevel": 3,
+            "gear": [
+                "055",
+                "061",
+                "050",
+                "036",
+                "038"
+            ],
+            "zetas": [],
+            "gp": 2205,
+            "type": 1
+        }
+    ],
+    "GENERALKENOBI": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [],
+            "zetas": [],
+            "gp": 17468,
+            "type": 1
+        }
+    ],
+    "ENFYSNEST": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 63,
+            "gearLevel": 6,
+            "gear": [
+                "036",
+                "068",
+                "096"
+            ],
+            "zetas": [],
+            "gp": 3210,
+            "type": 1
+        }
+    ],
+    "JAWASCAVENGER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 77,
+            "gearLevel": 8,
+            "gear": [
+                "024",
+                "105"
+            ],
+            "zetas": [],
+            "gp": 10931,
+            "type": 1
+        }
+    ],
+    "MOTHERTALZIN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "143",
+                "130",
+                "136",
+                "122"
+            ],
+            "zetas": [
+                "uniqueskill_MOTHERTALZIN01"
+            ],
+            "gp": 18332,
+            "type": 1
+        }
+    ],
+    "L3_37": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "BIGGSDARKLIGHTER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 10,
+            "gear": [
+                "113"
+            ],
+            "zetas": [],
+            "gp": 13217,
+            "type": 1
+        }
+    ],
+    "CC2224": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "EWOKSCOUT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 9,
+            "gear": [
+                "042",
+                "081",
+                "091",
+                "100",
+                "113"
+            ],
+            "zetas": [],
+            "gp": 12608,
+            "type": 1
+        }
+    ],
+    "NIGHTSISTERINITIATE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 42,
+            "gearLevel": 6,
+            "gear": [
+                "042",
+                "062",
+                "071"
+            ],
+            "zetas": [],
+            "gp": 2772,
+            "type": 1
+        }
+    ],
+    "K2SO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 41,
+            "gearLevel": 3,
+            "gear": [
+                "037",
+                "027",
+                "041"
+            ],
+            "zetas": [],
+            "gp": 1893,
+            "type": 1
+        }
+    ],
+    "NIGHTSISTERACOLYTE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 68,
+            "gearLevel": 8,
+            "gear": [
+                "073",
+                "080",
+                "095"
+            ],
+            "zetas": [],
+            "gp": 6191,
+            "type": 1
+        }
+    ],
+    "CT7567": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [],
+            "zetas": [],
+            "gp": 16893,
+            "type": 1
+        }
+    ],
+    "JAWAENGINEER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 61,
+            "gearLevel": 4,
+            "gear": [
+                "067",
+                "057",
+                "069",
+                "073",
+                "054"
+            ],
+            "zetas": [],
+            "gp": 3687,
+            "type": 1
+        }
+    ],
+    "IG86SENTINELDROID": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 43,
+            "gearLevel": 6,
+            "gear": [
+                "024",
+                "055"
+            ],
+            "zetas": [],
+            "gp": 6582,
+            "type": 1
+        }
+    ],
+    "SITHMARAUDER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "REYJEDITRAINING": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [
+                "159",
+                "158"
+            ],
+            "zetas": [
+                "leaderskill_REYJEDITRAINING",
+                "uniqueskill_REYJEDITRAINING02"
+            ],
+            "gp": 23274,
+            "type": 1
+        }
+    ],
+    "CAPITALMONCALAMARICRUISER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 80,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 3982.5,
+            "type": 2
+        }
+    ],
+    "KYLOREN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 9,
+            "gear": [
+                "108"
+            ],
+            "zetas": [],
+            "gp": 13619,
+            "type": 1
+        }
+    ],
+    "SUNFAC": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 50,
+            "gearLevel": 6,
+            "gear": [
+                "077",
+                "092",
+                "091",
+                "101",
+                "092"
+            ],
+            "zetas": [],
+            "gp": 3966,
+            "type": 1
+        }
+    ],
+    "LOBOT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 50,
+            "gearLevel": 6,
+            "gear": [],
+            "zetas": [],
+            "gp": 3039,
+            "type": 1
+        }
+    ],
+    "DENGAR": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 2,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 452,
+            "type": 1
+        }
+    ],
+    "TIEFIGHTERFIRSTORDER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 8949,
+            "type": 2
+        }
+    ],
+    "EMBO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "MAGNAGUARD": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 43,
+            "gearLevel": 5,
+            "gear": [
+                "024",
+                "024",
+                "074",
+                "075",
+                "080"
+            ],
+            "zetas": [],
+            "gp": 4353,
+            "type": 1
+        }
+    ],
+    "TIESILENCER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 8152.5,
+            "type": 2
+        }
+    ],
+    "XWINGRED3": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 9490.5,
+            "type": 2
+        }
+    ],
+    "RANGETROOPER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "CAPITALSTARDESTROYER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 85,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 6258,
+            "type": 2
+        }
+    ],
+    "QUIGONJINN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 63,
+            "gearLevel": 8,
+            "gear": [
+                "098",
+                "072",
+                "080"
+            ],
+            "zetas": [],
+            "gp": 8279,
+            "type": 1
+        }
+    ],
+    "T3_M4": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 40,
+            "gearLevel": 4,
+            "gear": [
+                "068"
+            ],
+            "zetas": [],
+            "gp": 1824,
+            "type": 1
+        }
+    ],
+    "ROYALGUARD": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 9,
+            "gear": [
+                "125",
+                "105",
+                "112",
+                "108"
+            ],
+            "zetas": [],
+            "gp": 13053,
+            "type": 1
+        }
+    ],
+    "XWINGRED2": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 81,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 8119.5,
+            "type": 2
+        }
+    ],
+    "BASTILASHAN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 68,
+            "gearLevel": 7,
+            "gear": [
+                "105",
+                "080",
+                "077",
+                "068",
+                "077"
+            ],
+            "zetas": [],
+            "gp": 4707,
+            "type": 1
+        }
+    ],
+    "JEDISTARFIGHTERAHSOKATANO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 7309.5,
+            "type": 2
+        }
+    ],
+    "JAWA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 41,
+            "gearLevel": 2,
+            "gear": [],
+            "zetas": [],
+            "gp": 1232,
+            "type": 1
+        }
+    ],
+    "HOTHREBELSOLDIER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "SITHFIGHTER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 75,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 3315,
+            "type": 2
+        }
+    ],
+    "XWINGRESISTANCE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 76,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 2580,
+            "type": 2
+        }
+    ],
+    "ASAJVENTRESS": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [
+                "160",
+                "165"
+            ],
+            "zetas": [
+                "leaderskill_ASAJVENTRESS",
+                "uniqueskill_ASAJVENTRESS01"
+            ],
+            "gp": 22700,
+            "type": 1
+        }
+    ],
+    "QIRA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "POE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 7,
+            "gear": [
+                "041",
+                "077",
+                "079",
+                "088",
+                "110"
+            ],
+            "zetas": [],
+            "gp": 11043,
+            "type": 1
+        }
+    ],
+    "CHIRRUTIMWE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 64,
+            "gearLevel": 7,
+            "gear": [
+                "106",
+                "091",
+                "101",
+                "075"
+            ],
+            "zetas": [],
+            "gp": 4889,
+            "type": 1
+        }
+    ],
+    "TALIA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "136",
+                "123",
+                "126",
+                "125"
+            ],
+            "zetas": [],
+            "gp": 14940,
+            "type": 1
+        }
+    ],
+    "KANANJARRUSS3": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 83,
+            "gearLevel": 8,
+            "gear": [
+                "108",
+                "113",
+                "055"
+            ],
+            "zetas": [],
+            "gp": 12338,
+            "type": 1
+        }
+    ],
+    "NIGHTSISTERZOMBIE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 77,
+            "gearLevel": 6,
+            "gear": [
+                "091",
+                "091",
+                "086",
+                "089",
+                "101"
+            ],
+            "zetas": [],
+            "gp": 10338,
+            "type": 1
+        }
+    ],
+    "GRANDADMIRALTHRAWN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 9,
+            "gear": [
+                "111",
+                "108",
+                "099",
+                "109",
+                "098"
+            ],
+            "zetas": [],
+            "gp": 14418,
+            "type": 1
+        }
+    ],
+    "SCARIFREBEL": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "ROSETICO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "IMPERIALPROBEDROID": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1014,
+            "type": 1
+        }
+    ],
+    "JEDIKNIGHTCONSULAR": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 67,
+            "gearLevel": 8,
+            "gear": [
+                "092",
+                "081",
+                "040",
+                "069",
+                "045"
+            ],
+            "zetas": [],
+            "gp": 7370,
+            "type": 1
+        }
+    ],
+    "AHSOKATANO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 67,
+            "gearLevel": 8,
+            "gear": [
+                "022",
+                "022",
+                "049",
+                "106"
+            ],
+            "zetas": [],
+            "gp": 9405,
+            "type": 1
+        }
+    ],
+    "SABINEWRENS3": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 71,
+            "gearLevel": 7,
+            "gear": [
+                "113",
+                "108",
+                "092"
+            ],
+            "zetas": [],
+            "gp": 5465,
+            "type": 1
+        }
+    ],
+    "TIEFIGHTERIMPERIAL": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 81,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 8232,
+            "type": 2
+        }
+    ],
+    "YOUNGHAN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1014,
+            "type": 1
+        }
+    ],
+    "STORMTROOPERHAN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 83,
+            "gearLevel": 9,
+            "gear": [
+                "081",
+                "091",
+                "113",
+                "125",
+                "115"
+            ],
+            "zetas": [],
+            "gp": 13542,
+            "type": 1
+        }
+    ],
+    "EWOKELDER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 83,
+            "gearLevel": 10,
+            "gear": [
+                "138",
+                "138",
+                "100",
+                "092"
+            ],
+            "zetas": [],
+            "gp": 14376,
+            "type": 1
+        }
+    ],
+    "HERASYNDULLAS3": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 9,
+            "gear": [
+                "126",
+                "100",
+                "096",
+                "092"
+            ],
+            "zetas": [],
+            "gp": 13062,
+            "type": 1
+        }
+    ],
+    "BOSSK": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "CHIEFCHIRPA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 80,
+            "gearLevel": 8,
+            "gear": [
+                "092",
+                "109",
+                "114"
+            ],
+            "zetas": [],
+            "gp": 9036,
+            "type": 1
+        }
+    ],
+    "CT5555": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 72,
+            "gearLevel": 9,
+            "gear": [
+                "108",
+                "108"
+            ],
+            "zetas": [],
+            "gp": 10889,
+            "type": 1
+        }
+    ],
+    "VISASMARR": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 78,
+            "gearLevel": 9,
+            "gear": [
+                "107",
+                "092",
+                "092"
+            ],
+            "zetas": [],
+            "gp": 9566,
+            "type": 1
+        }
+    ],
+    "LUKESKYWALKER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 83,
+            "gearLevel": 9,
+            "gear": [
+                "053",
+                "097",
+                "113"
+            ],
+            "zetas": [],
+            "gp": 12548,
+            "type": 1
+        }
+    ],
+    "FIRSTORDEREXECUTIONER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 2,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 452,
+            "type": 1
+        }
+    ],
+    "VADER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [
+                "161",
+                "162",
+                "164"
+            ],
+            "zetas": [],
+            "gp": 17673,
+            "type": 1
+        }
+    ],
+    "COUNTDOOKU": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1014,
+            "type": 1
+        }
+    ],
+    "MISSIONVAO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 40,
+            "gearLevel": 3,
+            "gear": [
+                "056",
+                "069",
+                "046",
+                "066",
+                "026"
+            ],
+            "zetas": [],
+            "gp": 1629,
+            "type": 1
+        }
+    ],
+    "ARC170CLONESERGEANT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 68,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1776,
+            "type": 2
+        }
+    ],
+    "HOUNDSTOOTH": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 42,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 888,
+            "type": 2
+        }
+    ],
+    "ADMINISTRATORLANDO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 8,
+            "gear": [
+                "053",
+                "056",
+                "089",
+                "096",
+                "110"
+            ],
+            "zetas": [],
+            "gp": 11946,
+            "type": 1
+        }
+    ],
+    "MAUL": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 40,
+            "gearLevel": 5,
+            "gear": [
+                "057",
+                "061",
+                "067"
+            ],
+            "zetas": [],
+            "gp": 4284,
+            "type": 1
+        }
+    ],
+    "JOLEEBINDO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 50,
+            "gearLevel": 4,
+            "gear": [
+                "012",
+                "041",
+                "050",
+                "065",
+                "082"
+            ],
+            "zetas": [],
+            "gp": 2087,
+            "type": 1
+        }
+    ],
+    "CHIEFNEBIT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 53,
+            "gearLevel": 7,
+            "gear": [
+                "048",
+                "093",
+                "082",
+                "080"
+            ],
+            "zetas": [],
+            "gp": 8340,
+            "type": 1
+        }
+    ],
+    "NIGHTSISTERSPIRIT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 40,
+            "gearLevel": 2,
+            "gear": [
+                "019",
+                "017",
+                "015",
+                "025"
+            ],
+            "zetas": [],
+            "gp": 2198,
+            "type": 1
+        }
+    ],
+    "FIRSTORDERTIEPILOT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 9,
+            "gear": [
+                "029",
+                "056",
+                "081",
+                "118"
+            ],
+            "zetas": [],
+            "gp": 12645,
+            "type": 1
+        }
+    ],
+    "DARTHSION": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "140",
+                "139",
+                "129",
+                "136",
+                "135"
+            ],
+            "zetas": [],
+            "gp": 13178,
+            "type": 1
+        }
+    ],
+    "CLONESERGEANTPHASEI": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 5,
+            "gear": [
+                "057",
+                "077",
+                "084",
+                "071",
+                "024"
+            ],
+            "zetas": [],
+            "gp": 8099,
+            "type": 1
+        }
+    ],
+    "CAPITALJEDICRUISER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 85,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 4425,
+            "type": 2
+        }
+    ],
+    "COMMANDSHUTTLE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 75,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 4696.5,
+            "type": 2
+        }
+    ],
+    "ADMIRALACKBAR": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "102",
+                "086",
+                "107",
+                "110",
+                "129"
+            ],
+            "zetas": [],
+            "gp": 14006,
+            "type": 1
+        }
+    ],
+    "FIRSTORDERTROOPER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 65,
+            "gearLevel": 7,
+            "gear": [
+                "048",
+                "077",
+                "063",
+                "075",
+                "100"
+            ],
+            "zetas": [],
+            "gp": 4335,
+            "type": 1
+        }
+    ],
+    "PHANTOM2": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 80,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 5634,
+            "type": 2
+        }
+    ],
+    "GREEDO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 66,
+            "gearLevel": 7,
+            "gear": [
+                "092",
+                "101",
+                "110",
+                "113"
+            ],
+            "zetas": [],
+            "gp": 8097,
+            "type": 1
+        }
+    ],
+    "HOTHLEIA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 40,
+            "gearLevel": 5,
+            "gear": [
+                "074",
+                "082",
+                "076",
+                "051"
+            ],
+            "zetas": [],
+            "gp": 4350,
+            "type": 1
+        }
+    ],
+    "STORMTROOPER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 39,
+            "gearLevel": 5,
+            "gear": [
+                "056",
+                "056",
+                "051"
+            ],
+            "zetas": [],
+            "gp": 4176,
+            "type": 1
+        }
+    ],
+    "LUMINARAUNDULI": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "113",
+                "135",
+                "140"
+            ],
+            "zetas": [],
+            "gp": 13458,
+            "type": 1
+        }
+    ],
+    "CHOPPERS3": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 9,
+            "gear": [
+                "126",
+                "125",
+                "114",
+                "113",
+                "091"
+            ],
+            "zetas": [],
+            "gp": 13470,
+            "type": 1
+        }
+    ],
+    "HOTHREBELSCOUT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 40,
+            "gearLevel": 4,
+            "gear": [
+                "068",
+                "081",
+                "050",
+                "039"
+            ],
+            "zetas": [],
+            "gp": 5939,
+            "type": 1
+        }
+    ],
+    "BOBAFETT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 74,
+            "gearLevel": 8,
+            "gear": [
+                "113",
+                "113",
+                "111",
+                "086",
+                "065"
+            ],
+            "zetas": [],
+            "gp": 10680,
+            "type": 1
+        }
+    ],
+    "GHOST": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 85,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 8227.5,
+            "type": 2
+        }
+    ],
+    "NUTEGUNRAY": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 40,
+            "gearLevel": 4,
+            "gear": [
+                "019",
+                "037",
+                "046",
+                "061"
+            ],
+            "zetas": [],
+            "gp": 5970,
+            "type": 1
+        }
+    ],
+    "WEDGEANTILLES": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 8,
+            "gear": [
+                "074",
+                "109",
+                "112",
+                "118"
+            ],
+            "zetas": [],
+            "gp": 13200,
+            "type": 1
+        }
+    ],
+    "VEERS": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 80,
+            "gearLevel": 7,
+            "gear": [
+                "105",
+                "093",
+                "073",
+                "073",
+                "095"
+            ],
+            "zetas": [],
+            "gp": 8235,
+            "type": 1
+        }
+    ],
+    "TIEADVANCED": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 84,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 6225,
+            "type": 2
+        }
+    ],
+    "DEATHTROOPER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "144",
+                "097"
+            ],
+            "zetas": [],
+            "gp": 12824,
+            "type": 1
+        }
+    ],
+    "WICKET": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 9,
+            "gear": [
+                "092",
+                "086"
+            ],
+            "zetas": [],
+            "gp": 13001,
+            "type": 1
+        }
+    ],
+    "GEONOSIANSTARFIGHTER2": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 8040,
+            "type": 2
+        }
+    ],
+    "GEONOSIANSTARFIGHTER1": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 77,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 3433.5,
+            "type": 2
+        }
+    ],
+    "MACEWINDU": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 67,
+            "gearLevel": 8,
+            "gear": [
+                "038",
+                "065",
+                "073",
+                "094",
+                "105"
+            ],
+            "zetas": [],
+            "gp": 9360,
+            "type": 1
+        }
+    ],
+    "PAO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 8,
+            "gear": [
+                "074",
+                "112"
+            ],
+            "zetas": [],
+            "gp": 13302,
+            "type": 1
+        }
+    ],
+    "DATHCHA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 63,
+            "gearLevel": 7,
+            "gear": [
+                "056",
+                "074",
+                "084",
+                "091",
+                "105"
+            ],
+            "zetas": [],
+            "gp": 9432,
+            "type": 1
+        }
+    ],
+    "JYNERSO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 65,
+            "gearLevel": 6,
+            "gear": [
+                "096",
+                "091",
+                "057"
+            ],
+            "zetas": [],
+            "gp": 4223,
+            "type": 1
+        }
+    ],
+    "MILLENNIUMFALCONPRISTINE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 67,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1668,
+            "type": 2
+        }
+    ],
+    "IG88": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1014,
+            "type": 1
+        }
+    ],
+    "TEEBO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 8,
+            "gear": [
+                "100",
+                "086",
+                "075",
+                "049"
+            ],
+            "zetas": [],
+            "gp": 10533,
+            "type": 1
+        }
+    ],
+    "REY": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 11,
+            "gear": [
+                "153",
+                "129",
+                "129"
+            ],
+            "zetas": [],
+            "gp": 16299,
+            "type": 1
+        }
+    ],
+    "BLADEOFDORIN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1014,
+            "type": 2
+        }
+    ],
+    "DARTHNIHILUS": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "122"
+            ],
+            "zetas": [],
+            "gp": 14855,
+            "type": 1
+        }
+    ],
+    "EMPERORPALPATINE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 11,
+            "gear": [
+                "131",
+                "149"
+            ],
+            "zetas": [
+                "leaderskill_EMPERORPALPATINE"
+            ],
+            "gp": 19082,
+            "type": 1
+        }
+    ],
+    "PLOKOON": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1521,
+            "type": 1
+        }
+    ],
+    "DAKA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 11,
+            "gear": [
+                "110"
+            ],
+            "zetas": [
+                "uniqueskill_DAKA01"
+            ],
+            "gp": 18099,
+            "type": 1
+        }
+    ],
+    "GRANDMOFFTARKIN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 9,
+            "gear": [
+                "122",
+                "091",
+                "094",
+                "024"
+            ],
+            "zetas": [],
+            "gp": 14654,
+            "type": 1
+        }
+    ],
+    "AMILYNHOLDO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 40,
+            "gearLevel": 2,
+            "gear": [
+                "015",
+                "041",
+                "032",
+                "026"
+            ],
+            "zetas": [],
+            "gp": 1691,
+            "type": 1
+        }
+    ],
+    "LOGRAY": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 59,
+            "gearLevel": 6,
+            "gear": [
+                "091",
+                "068",
+                "062"
+            ],
+            "zetas": [],
+            "gp": 2697,
+            "type": 1
+        }
+    ],
+    "URORRURRR": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1014,
+            "type": 1
+        }
+    ],
+    "GEONOSIANSOLDIER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 66,
+            "gearLevel": 8,
+            "gear": [
+                "048",
+                "065",
+                "071",
+                "097",
+                "103"
+            ],
+            "zetas": [],
+            "gp": 8801,
+            "type": 1
+        }
+    ],
+    "SITHASSASSIN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 40,
+            "gearLevel": 3,
+            "gear": [
+                "056",
+                "053",
+                "069",
+                "060",
+                "037"
+            ],
+            "zetas": [],
+            "gp": 2474,
+            "type": 1
+        }
+    ],
+    "SNOWTROOPER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 58,
+            "gearLevel": 6,
+            "gear": [
+                "091",
+                "101",
+                "073",
+                "024"
+            ],
+            "zetas": [],
+            "gp": 5031,
+            "type": 1
+        }
+    ],
+    "SHORETROOPER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "PRINCESSLEIA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 83,
+            "gearLevel": 9,
+            "gear": [
+                "091",
+                "103",
+                "107",
+                "125"
+            ],
+            "zetas": [],
+            "gp": 12495,
+            "type": 1
+        }
+    ],
+    "RESISTANCETROOPER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [
+                "165"
+            ],
+            "zetas": [],
+            "gp": 16319,
+            "type": 1
+        }
+    ],
+    "FINN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "071",
+                "091",
+                "125"
+            ],
+            "zetas": [],
+            "gp": 15174,
+            "type": 1
+        }
+    ],
+    "PHASMA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 8,
+            "gear": [
+                "066",
+                "073",
+                "110"
+            ],
+            "zetas": [],
+            "gp": 11622,
+            "type": 1
+        }
+    ],
+    "HK47": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 40,
+            "gearLevel": 4,
+            "gear": [
+                "082",
+                "035",
+                "057",
+                "048",
+                "039"
+            ],
+            "zetas": [],
+            "gp": 5994,
+            "type": 1
+        }
+    ],
+    "TUSKENRAIDER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 1014,
+            "type": 1
+        }
+    ],
+    "CASSIANANDOR": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 40,
+            "gearLevel": 5,
+            "gear": [
+                "074",
+                "068",
+                "053"
+            ],
+            "zetas": [],
+            "gp": 6279,
+            "type": 1
+        }
+    ],
+    "EZRABRIDGERS3": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "144",
+                "081"
+            ],
+            "zetas": [
+                "specialskill_EZRABRIDGERS301"
+            ],
+            "gp": 17337,
+            "type": 1
+        }
+    ],
+    "TIEREAPER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 75,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 2818.5,
+            "type": 2
+        }
+    ],
+    "ZAALBAR": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 40,
+            "gearLevel": 2,
+            "gear": [
+                "021",
+                "021",
+                "026",
+                "027"
+            ],
+            "zetas": [],
+            "gp": 1353,
+            "type": 1
+        }
+    ],
+    "CLONEWARSCHEWBACCA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 65,
+            "gearLevel": 8,
+            "gear": [],
+            "zetas": [],
+            "gp": 7347,
+            "type": 1
+        }
+    ],
+    "JEDISTARFIGHTERCONSULAR": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 83,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 7398,
+            "type": 2
+        }
+    ],
+    "FIRSTORDEROFFICERMALE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 8,
+            "gear": [
+                "066",
+                "076",
+                "100"
+            ],
+            "zetas": [],
+            "gp": 10695,
+            "type": 1
+        }
+    ],
+    "COMMANDERLUKESKYWALKER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [],
+            "zetas": [
+                "uniqueskill_COMMANDERLUKESKYWALKER02"
+            ],
+            "gp": 20448,
+            "type": 1
+        }
+    ],
+    "DARTHSIDIOUS": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 40,
+            "gearLevel": 2,
+            "gear": [
+                "017",
+                "028",
+                "031"
+            ],
+            "zetas": [],
+            "gp": 2165,
+            "type": 1
+        }
+    ],
+    "OLDBENKENOBI": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 83,
+            "gearLevel": 9,
+            "gear": [
+                "111",
+                "120"
+            ],
+            "zetas": [],
+            "gp": 14331,
+            "type": 1
+        }
+    ],
+    "KYLORENUNMASKED": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 9,
+            "gear": [
+                "116",
+                "125",
+                "112",
+                "105",
+                "075"
+            ],
+            "zetas": [],
+            "gp": 14687,
+            "type": 1
+        }
+    ],
+    "YOUNGCHEWBACCA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "RESISTANCEPILOT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 66,
+            "gearLevel": 7,
+            "gear": [
+                "110",
+                "024",
+                "053"
+            ],
+            "zetas": [],
+            "gp": 7790,
+            "type": 1
+        }
+    ],
+    "AURRA_SING": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 677,
+            "type": 1
+        }
+    ],
+    "JEDIKNIGHTGUARDIAN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 40,
+            "gearLevel": 3,
+            "gear": [
+                "036",
+                "037",
+                "044",
+                "050"
+            ],
+            "zetas": [],
+            "gp": 2432,
+            "type": 1
+        }
+    ],
+    "YOUNGLANDO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 40,
+            "gearLevel": 4,
+            "gear": [],
+            "zetas": [],
+            "gp": 1671,
+            "type": 1
+        }
+    ],
+    "HANSOLO": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 12,
+            "gear": [],
+            "zetas": [
+                "uniqueskill_HANSOLO01"
+            ],
+            "gp": 19299,
+            "type": 1
+        }
+    ],
+    "SMUGGLERHAN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 8,
+            "gear": [
+                "113"
+            ],
+            "zetas": [],
+            "gp": 11192,
+            "type": 1
+        }
+    ],
+    "CADBANE": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 4,
+            "level": 44,
+            "gearLevel": 5,
+            "gear": [
+                "055",
+                "056",
+                "068",
+                "078",
+                "086"
+            ],
+            "zetas": [],
+            "gp": 2817,
+            "type": 1
+        }
+    ],
+    "UGNAUGHT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 2,
+            "level": 1,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 452,
+            "type": 1
+        }
+    ],
+    "TIEFIGHTERPILOT": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 82,
+            "gearLevel": 9,
+            "gear": [
+                "113",
+                "126",
+                "125",
+                "116"
+            ],
+            "zetas": [],
+            "gp": 13439,
+            "type": 1
+        }
+    ],
+    "GRANDMASTERYODA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 85,
+            "gearLevel": 10,
+            "gear": [
+                "107",
+                "090",
+                "095",
+                "102",
+                "143"
+            ],
+            "zetas": [
+                "specialskill_GRANDMASTERYODA03"
+            ],
+            "gp": 18509,
+            "type": 1
+        }
+    ],
+    "UMBARANSTARFIGHTER": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 6,
+            "level": 80,
+            "gearLevel": 1,
+            "gear": [],
+            "zetas": [],
+            "gp": 5263.5,
+            "type": 2
+        }
+    ],
+    "WAMPA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 5,
+            "level": 85,
+            "gearLevel": 8,
+            "gear": [
+                "063",
+                "081",
+                "082",
+                "108"
+            ],
+            "zetas": [],
+            "gp": 10805,
+            "type": 1
+        }
+    ],
+    "SMUGGLERCHEWBACCA": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 7,
+            "level": 80,
+            "gearLevel": 8,
+            "gear": [
+                "063",
+                "081",
+                "082"
+            ],
+            "zetas": [],
+            "gp": 11271,
+            "type": 1
+        }
+    ],
+    "BISTAN": [
+        {
+            "player": "Canudo",
+            "allyCode": 821651341,
+            "starLevel": 3,
+            "level": 41,
+            "gearLevel": 2,
+            "gear": [
+                "010",
+                "017",
+                "015",
+                "028",
+                "026"
+            ],
+            "zetas": [],
+            "gp": 1397,
+            "type": 1
+        }
+    ]
+}
