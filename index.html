@@ -91,7 +91,7 @@
             <button id="create" class="w3-bar-item w3-green" style="width:33.3%" onclick="buttonCreateLabelClicked()">Create</button>
             <button id="save" class="w3-bar-item w3-green" style="width:33.3%" onclick="buttonSaveLabelClicked(null)">Save</button>
             <button id="cancel" class="w3-bar-item w3-black" style="width:33.3%" onclick="closeEditLabel()">Cancel</button>
-            <button id="delete" class="w3-bar-item w3-red" style="width:33.3%" onclick="buttonDeleteClicked()">Delete</button>
+            <button id="delete" class="w3-bar-item w3-red" style="width:33.3%" onclick="buttonDeleteLabelClicked()">Delete</button>
           </div>
           <hr>
           <div id="label-options-modal-toons">
@@ -187,6 +187,22 @@
 
           $context.setLabels();
       });
+    }
+
+    function buttonDeleteLabelClicked()
+    {
+      if (confirm("You're about to delete label '" + $selectedLabel + "'. Are you sure?") == false)
+        return;
+
+      if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
+        window.gapi.auth2.getAuthInstance().signIn().then(() => { deleteSelectedLabel(); });
+        return;
+      }
+      else {
+        deleteSelectedLabel();
+      }
+
+      closeEditLabel();
     }
 
     function showHelp() {
@@ -651,19 +667,6 @@
 
       $selectedLabel = parent;
       filterByLabel(parent);
-    }
-
-    function buttonDeleteClicked() {
-      if (confirm("You're about to delete label '" + $selectedLabel + "'. Are you sure?") == false)
-        return;
-
-      if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
-        window.gapi.auth2.getAuthInstance().signIn().then(() => { deleteSelectedLabel(); });
-        return;
-      }
-      else {
-        deleteSelectedLabel();
-      }
     }
 
     // function buttonRenameClicked() {
