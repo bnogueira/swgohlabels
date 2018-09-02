@@ -11,10 +11,10 @@
 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="styles.css?version=1.94">
-  <script src="storage.js?version=1.7"></script>
-  <script src="objects.js?version=1.7"></script>
-  <script src="labels.js?version=1.7"></script>
-  <script src="enums.js?version=1.7"></script>
+  <script src="storage.js?version=1.81"></script>
+  <script src="objects.js?version=1.81"></script>
+  <script src="labels.js?version=1.81"></script>
+  <script src="enums.js?version=1.81"></script>
 
   <style>
   </style>
@@ -25,9 +25,18 @@
   <a href="#" onclick="signOut();">Sign out</a> -->
 
   <div id="gbutton" class="g-signin2" style="display:none;" data-onsuccess="onSignIn" data-onfailure="onSignInFailure"></div>
-  <div class="topbar not-selectable">
+  <!-- <div class="topbar not-selectable">
     <div id="profile" class="topbar-item" style="width: 100px" onclick="updateProfile()">Sync</div>
     <div id="back" class="topbar-item" style="display:none;" onclick="buttonBackClicked()">Back</div>
+  </div> -->
+
+  <div class="w3-container" style="background: linear-gradient(to bottom, #0b44a0 0%, #000000 100%);">
+    <div class="w3-bar">
+      <button id="profile" class="w3-button w3-light-blue w3-padding-small" style="margin: 5px;" onclick="updateProfile()">Sync</button>
+      <button id="back" class="w3-button w3-light-blue w3-padding-small" style="margin: 5px;" onclick="buttonBackClicked()">Back</button>
+      <div class="w3-bar-item w3-text-blue-grey w3-right w3-tiny">1.21</div>
+      <!-- w3-padding-small -->
+    </div>
   </div>
 
   <div id="workspace" class="container not-selectable">
@@ -66,7 +75,6 @@
       <div id="pool" class="button notselected" style="display:none;" onclick="openCreateLabel();"></div>
       <div id="label-options" class="button notselected" style="display:none;" onclick="openEditLabel()">Edit</div>
       <div id="help" class="button notselected" onclick="toggleHelp()">Help</div>
-      <p style="bottom: 0px; color: white;">1.1</p>
       <div class="w3-right-align"><p>Right aligned text.</p></div>
     </div>
   </div>
@@ -565,45 +573,45 @@
       refreshPool();
     }
 
-    function buttonCreateClicked() {
-      if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
-        //window.gapi.auth2.getAuthInstance().signIn().then(() => { signedInCreateLabel(label); });
-        window.gapi.auth2.getAuthInstance().signIn().then(onSignIn);
-        return;
-      }
-      else {
-        var label = prompt("What is the label name?");
+    // function buttonCreateClicked() {
+    //   if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
+    //     //window.gapi.auth2.getAuthInstance().signIn().then(() => { signedInCreateLabel(label); });
+    //     window.gapi.auth2.getAuthInstance().signIn().then(onSignIn);
+    //     return;
+    //   }
+    //   else {
+    //     var label = prompt("What is the label name?");
 
-        if (label == null || label == "")
-          return;
+    //     if (label == null || label == "")
+    //       return;
 
-        signedInCreateLabel(label);
-      }
-    }
+    //     signedInCreateLabel(label);
+    //   }
+    // }
 
-    function signedInCreateLabel(label) {
-      // unselect objects
-      for (var i = 0; i < $pool.length; i++) {
-        $("div[id='data']").children("div[id='" + $pool[i] + "']").toggleClass("selected notselected");
-      }
+    // function signedInCreateLabel(label) {
+    //   // unselect objects
+    //   for (var i = 0; i < $pool.length; i++) {
+    //     $("div[id='data']").children("div[id='" + $pool[i] + "']").toggleClass("selected notselected");
+    //   }
 
-      // create label
-      var newLabelHtml = $labels.createLabel(label, $pool);
-      $pool = [];
-      refreshPool();
+    //   // create label
+    //   var newLabelHtml = $labels.createLabel(label, $pool);
+    //   $pool = [];
+    //   refreshPool();
 
-      // add to displayed data
-      document.getElementById("data").innerHTML = newLabelHtml + document.getElementById("data").innerHTML;
+    //   // add to displayed data
+    //   document.getElementById("data").innerHTML = newLabelHtml + document.getElementById("data").innerHTML;
 
-      // save the html for later sage
-      localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
+    //   // save the html for later sage
+    //   localStorage.setItem('dataInnerHTML', document.getElementById("data").innerHTML);
 
-      // save labels in the database
-      ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
+    //   // save labels in the database
+    //   ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
 
-      $context.setLabels();
-      contextUpdated();
-    }
+    //   $context.setLabels();
+    //   contextUpdated();
+    // }
 
     function getUserLabelsResult(response) {
       console.log(response);
@@ -658,15 +666,15 @@
       }
     }
 
-    function buttonRenameClicked() {
-      if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
-        window.gapi.auth2.getAuthInstance().signIn().then(() => { renameSelectedLabel(); });
-        return;
-      }
-      else {
-        renameSelectedLabel();
-      }
-    }
+    // function buttonRenameClicked() {
+    //   if (window.gapi.auth2.getAuthInstance().isSignedIn.get() == false) {
+    //     window.gapi.auth2.getAuthInstance().signIn().then(() => { renameSelectedLabel(); });
+    //     return;
+    //   }
+    //   else {
+    //     renameSelectedLabel();
+    //   }
+    // }
 
     function deleteSelectedLabel() {
       setStatus("updating data...");
@@ -682,42 +690,41 @@
 
     }
 
-    function renameSelectedLabel() {
-      var newName = prompt("Enter a new name to replace '" + $selectedLabel + "':", $selectedLabel);
+    // function renameSelectedLabel() {
+    //   var newName = prompt("Enter a new name to replace '" + $selectedLabel + "':", $selectedLabel);
 
-      if (newName == null || newName == "")
-        return;
+    //   if (newName == null || newName == "")
+    //     return;
 
-      hideLabelButtons();
-      setStatus("updating data...");
-      $labels.renameLabel($selectedLabel, newName);
-      $selectedLabel = newName;
+    //   hideLabelButtons();
+    //   setStatus("updating data...");
+    //   $labels.renameLabel($selectedLabel, newName);
+    //   $selectedLabel = newName;
 
-      ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
-      localStorage.removeItem('dataInnerHTML');
+    //   ExecuteCommand("setUserLabels", JSON.stringify($labels.userLabels), getUserLabelsResult);
+    //   localStorage.removeItem('dataInnerHTML');
 
-      displayObjects($data, $labels);
-      filterAllLabels();
-      assignImages();
-      setStatus($profile);
-    }
+    //   displayObjects($data, $labels);
+    //   filterAllLabels();
+    //   assignImages();
+    //   setStatus($profile);
+    // }
 
 
     function hideLabelButtons() {
       $("div[id='label-options']").hide();
       $("div[type='pool-button']").hide();
-      $("div[id='profile']").show();
+      $("button[id='profile']").show();
     }
 
     function filterByLabel(label) {
-      $("div[id='profile']").hide();
+      $("button[id='profile']").hide();
 
       if ($labels.isUserLabel(label)) {
-        $("div[type='topbar-button']").show();
         $("div[id='label-options']").show();
       }
       else {
-        $("div[id='back']").show();
+        $("button[id='back']").show();
         $("div[id='label-options']").hide();
       }
 
@@ -736,8 +743,8 @@
 
       $("div[id='data']").children("div").hide();
       hideLabelButtons();
-      $("div[id='profile']").hide();
-      $("div[id='back']").show();
+      $("button[id='profile']").hide();
+      $("button[id='back']").show();
       $("div[id='create']").show();
 
       for (var i = 0; i < $pool.length; i++)
@@ -753,8 +760,8 @@
     function filterAllToons() {
       // hide all
       $("div[id='data']").children("div").show();
-      $("div[id='profile']").show();
-      $("div[id='back']").hide();
+      $("button[id='profile']").show();
+      $("button[id='back']").hide();
       $("div[id='create']").hide();
 
       var allLabels = $labels.getAllLabels();
