@@ -29,8 +29,11 @@ class Labels {
     }
 
     updateLabel(label, newName, objectsList) {
-        if (label != null)
-            this.deleteLabel(label);
+        if (label != null) {
+            this.renameLabelSons(label, newName);
+            this.deleteLabelAndChilds(label);
+            Labels.completeCollectionHierarchy(this.userLabels);
+        }
 
         this.createLabel(newName, objectsList);
         this.userLabels = this.sortLabels(this.userLabels);
@@ -129,46 +132,78 @@ class Labels {
             this.userLabels = {};
 
         this.userLabels[label] = pool;
-        Labels.completeHierarchy(this.userLabels, label);
+        //Labels.completeHierarchy(this.userLabels, label);
+        Labels.completeCollectionHierarchy(this.userLabels);
         this.useLabels = this.sortLabels(this.userLabels);
         storeObjectInStorage('userLabels', this.userLabels);
         return this.getLabelDesign(label);
     }
 
     deleteLabel(labelName) {
-        var hierarchy = labelName.split('.');
-        var son = labelName;
-        var parent;
-        for (var h = 0; h < hierarchy.length; h++) {
-            parent = son.substring(0, son.lastIndexOf("."))
+        delete this.userLabels[labelName];
 
-            if (this.hasObjects(son) == false)
-                delete this.userLabels[son];
+        // delete parent hieranchy
+        var ln = labelName.substring(0, labelName.lastIndexOf("."));
 
-            son = parent;
+        if (ln != "") {
+            var hierarchy = ln.split('.');
+            var son = ln;
+            var parent;
+            for (var h = 0; h < hierarchy.length; h++) {
+                parent = son.substring(0, son.lastIndexOf("."))
+
+                if (this.hasObjects(son) == false)
+                    this.deleteLabelAndChilds(son);
+
+                son = parent;
+            }
         }
 
         storeObjectInStorage('userLabels', this.userLabels);
     }
 
+    deleteLabelAndChilds(labelName) {
+        for (var label in this.userLabels) {
+            if (label == labelName || label.startsWith(labelName + '.'))
+                delete this.userLabels[label];
+        }
+    }
+
     hasObjects(labelName) {
+        if (this.userLabels.hasOwnProperty(labelName) == false) 
+            return false;
+
         var labelContent = this.userLabels[labelName];
         var hasObject = false;
 
         // check if label has toon objects
-        for (var j = 0; j < labelContent.length; j++)
-            if (this.objects.hasOwnProperty(labelContent[j])) {
+        for (var j = 0; j < labelContent.length; j++) {
+            // return true if item is an object or its son has an object
+            var son = labelContent[j];
+            if (this.objects.hasObject(son) || this.hasObjects(son))
                 return true;
-            }
+        }
 
         return false;
     }
 
-    renameLabel(from, to) {
-        this.userLabels[to] = this.userLabels[from];
-        delete this.userLabels[from];
-        this.userLabels = this.sortLabels(this.userLabels);
-        storeObjectInStorage('userLabels', this.userLabels);
+    renameLabelSons(from, to) {
+        from = from + ".";
+        var newLabels = new Object();
+
+        // remove all the labels that start with 'from.' in key
+        for (var label in this.userLabels) {
+            if (label.startsWith(from)) {
+                var key = to + "." + label.substring(from.length);
+                newLabels[key] = this.userLabels[label];
+
+                delete this.userLabels[label];
+            }
+        }
+
+        // index the removed labels with key starting with 'to.'
+        for (var newLabel in newLabels)
+            this.userLabels[newLabel] = newLabels[newLabel];
     }
 
     isUserLabel(label) {

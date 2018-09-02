@@ -10,6 +10,10 @@ class Objects {
             this.objectsIndex[this.objectsList[i].uniqueName] = this.objectsList[i];
     }
 
+    hasObject(key) {
+        return this.objectsIndex.hasOwnProperty(key);
+    }
+
     getObjectDesign(idx, isSelected, deffered) {
         var gearImage = "";
         var levelAndStars = "";
@@ -54,11 +58,11 @@ class Objects {
 
         var design =
             "<div class=\"w3-container w3-bar w3-border w3-border-gray\" style=\"color: cyan; height: 60px;\" object-id=\"" + objectUniqueName + "\">" +
-                "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-bar-item w3-button w3-xlarge w3-right\">&times;</span>" +
-                "<img src=\"" + image + "\" class=\"w3-bar-item\" style=\"width:50px; border-radius: 50%; padding: 5px 0\">" +
-                "<div class=\"w3-bar-item\">" +
-                    "<span>" + name + "</span>" +
-                "</div>" +
+            "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-bar-item w3-button w3-xlarge w3-right\">&times;</span>" +
+            "<img src=\"" + image + "\" class=\"w3-bar-item\" style=\"width:50px; border-radius: 50%; padding: 5px 0\">" +
+            "<div class=\"w3-bar-item\">" +
+            "<span>" + name + "</span>" +
+            "</div>" +
             "</div>";
         return design;
     }
