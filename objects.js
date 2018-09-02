@@ -45,6 +45,10 @@ class Objects {
     }
 
     getObjectEditDesign(objectUniqueName) {
+
+        if (this.objectsIndex.hasOwnProperty(objectUniqueName) == false)
+            return ""
+
         var name = this.objectsIndex[objectUniqueName].name;
         var image = this.imagesIndex[objectUniqueName].src;
 

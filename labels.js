@@ -9,8 +9,7 @@ class Labels {
         this.createBaseLabels(objects.objectsList);
         this.baseLabels = this.sortLabels(this.baseLabels);
 
-        if (this.userLabels != null)
-        {
+        if (this.userLabels != null) {
             delete this.userLabels[""];
             Labels.completeCollectionHierarchy(this.userLabels);
             this.userLabels = this.sortLabels(this.userLabels);
@@ -29,18 +28,17 @@ class Labels {
         return '<div id="' + label + '" class="label notselected" ' + clickEvent + hidden + '>' + hierarchy[hierarchy.length - 1] + '</div>';
     }
 
-    updateLabel(label, newName, objectsList)
-    {
+    updateLabel(label, newName, objectsList) {
         if (label != null)
             this.deleteLabel(label);
-            
+
         this.createLabel(newName, objectsList);
         this.userLabels = this.sortLabels(this.userLabels);
     }
 
     getLabelEditDesign(label, dataCollection) {
         var labelToons = this.getLabelValue(label);
-        
+
         return this.getLabelCreateDesign(labelToons);
     }
 
@@ -126,7 +124,6 @@ class Labels {
         }
     }
 
-
     createLabel(label, pool) {
         if (this.userLabels == null)
             this.userLabels = {};
@@ -138,9 +135,33 @@ class Labels {
         return this.getLabelDesign(label);
     }
 
-    deleteLabel(label) {
-        delete this.userLabels[label];
-        storeObjectInStorage('baseLabels', this.baseLabels);
+    deleteLabel(labelName) {
+        var hierarchy = labelName.split('.');
+        var son = labelName;
+        var parent;
+        for (var h = 0; h < hierarchy.length; h++) {
+            parent = son.substring(0, son.lastIndexOf("."))
+
+            if (this.hasObjects(son) == false)
+                delete this.userLabels[son];
+
+            son = parent;
+        }
+
+        storeObjectInStorage('userLabels', this.userLabels);
+    }
+
+    hasObjects(labelName) {
+        var labelContent = this.userLabels[labelName];
+        var hasObject = false;
+
+        // check if label has toon objects
+        for (var j = 0; j < labelContent.length; j++)
+            if (this.objects.hasOwnProperty(labelContent[j])) {
+                return true;
+            }
+
+        return false;
     }
 
     renameLabel(from, to) {
@@ -151,13 +172,12 @@ class Labels {
     }
 
     isUserLabel(label) {
-        return (this.userLabels != null) && this.userLabels.hasOwnProperty(label) && (label!="");
+        return (this.userLabels != null) && this.userLabels.hasOwnProperty(label) && (label != "");
     }
 
-    sortLabels(labels)
-    {
+    sortLabels(labels) {
         var sorted = {},
-        key, a = [];
+            key, a = [];
 
         for (key in labels) {
             if (labels.hasOwnProperty(key)) {
@@ -170,7 +190,7 @@ class Labels {
         for (key = 0; key < a.length; key++) {
             sorted[a[key]] = labels[a[key]];
         }
-        return sorted;    
+        return sorted;
     }
 
 }
