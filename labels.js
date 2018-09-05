@@ -90,12 +90,12 @@ class Labels {
 
             // dig objectsList and create labels
             for (var i = 0; i < objectsList.length; i++) {
-                for (var j = 0; j < objectsList[i].factions.length; j++) {
-                    var labelName = root + objectsList[i].factions[j];
+                for (var j = 0; j < objectsList[i].categoryIdList.length; j++) {
+                    var labelName = root + objectsList[i].categoryIdList[j];
 
                     if (this.baseLabels.hasOwnProperty(labelName) == false)
                         this.baseLabels[labelName] = [];
-                    this.baseLabels[labelName].push(objectsList[i].uniqueName);
+                    this.baseLabels[labelName].push(objectsList[i].baseId);
                 }
             }
 

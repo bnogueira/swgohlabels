@@ -298,6 +298,23 @@
         getData();
     }
 
+    function ObjectsExecuteCommand(command, arguments, callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://swgohlabels.com/services/objects.php');
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onload = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          callback(xhr.responseText);
+        }
+      };
+
+      var parameters = "command=" + command;
+      if (arguments != null)
+        parameters += "&arguments=" + arguments;
+
+      xhr.send(parameters);
+    }
+
     function ExecuteCommand(command, arguments, callback) {
       var xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://swgohlabels.com/services/auth.php');
@@ -349,6 +366,20 @@
       xhttp.send();
     }
 
+    function putXML(url, callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onload = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          callback(xhr.responseText);
+        }
+      };
+
+      xhr.send();
+    }
+
+
     function keepData(err, result) {
       if (err !== null) {
         alert('Something went wrong: ' + err);
@@ -362,9 +393,11 @@
         return;
       }
 
-      getXML(
-        "https://script.google.com/macros/s/AKfycbxpqgsngbaUJ4xMl22o5VpAkz1oSpSzfIsw694CzfwyEc_GmeM/exec?user=" + $profile,
-        addUserDataAndCreateIndex);
+      // getXML(
+      //   "https://script.google.com/macros/s/AKfycbxpqgsngbaUJ4xMl22o5VpAkz1oSpSzfIsw694CzfwyEc_GmeM/exec?user=" + $profile,
+      //   addUserDataAndCreateIndex);
+
+      ObjectsExecuteCommand("getUserData", $profile, addUserDataAndCreateIndex);
     }
 
     function addUserDataAndCreateIndex(result) {
@@ -382,8 +415,8 @@
       var jsonResult = JSON.parse(result);
 
       for (var i = 0; i < $data.length; i++)
-        if (jsonResult.hasOwnProperty($data[i].uniqueName))
-          $data[i].instance = jsonResult[$data[i].uniqueName];
+        if (jsonResult.hasOwnProperty($data[i].baseId))
+          $data[i].instance = jsonResult[$data[i].baseId];
 
       $data.sort(compareDataElements);
       storeObjectInStorage('data', $data);
@@ -401,7 +434,10 @@
       else {
         setStatus("Syncing data...");
         clearLocalStorage();
-        getJSON("https://raw.githubusercontent.com/jmiln/SWGoHBot/master/data/characters.json", keepData);
+        //getJSON("https://raw.githubusercontent.com/jmiln/SWGoHBot/master/data/characters.json", keepData);
+        //ObjectsExecuteCommand("getAllObjects", null, keepData);
+        //putXML("https://swgohlabels.com/services/test_index.php", keepData);
+        getJSON("https://swgohlabels.com/services/UnitsList.json", keepData);
       }
     }
 
@@ -553,8 +589,10 @@
       var item;
       for (var i = 0; i < data.length; i++) {
         item = data[i];
-        $images[item.uniqueName] = {};
-        $images[item.uniqueName].src = "img" + item.avatarURL.slice(item.avatarURL.lastIndexOf('/'));
+        $images[item.baseId] = {};
+        //$images[item.uniqueName].src = "img" + item.avatarURL.slice(item.avatarURL.lastIndexOf('/'));
+        //$images[item.baseId].src = "./images/" + item.baseId + ".png";//"img" + item.avatarURL.slice(item.avatarURL.lastIndexOf('/'));
+        $images[item.baseId].src = "./img/" + item.thumbnailName + ".png";//"img" + item.avatarURL.slice(item.avatarURL.lastIndexOf('/'));
       }
     }
 

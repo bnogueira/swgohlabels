@@ -1,6 +1,7 @@
-name
-uniqueName
-avatarURL
+name -> nameKey
+uniqueName -> baseId
+avatarURL -> 
+factions -> categoryIdList
 
 
 [
