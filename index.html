@@ -388,6 +388,10 @@
 
       $data = result;
 
+      for (var i = $data.length - 1; i >= 0 ; i--)
+        if ($data[i].obtainable == false)
+          $data.splice(i, 1);
+
       if ($profile == null) {
         setStatus("Sync");
         return;
@@ -398,6 +402,18 @@
       //   addUserDataAndCreateIndex);
 
       ObjectsExecuteCommand("getUserData", $profile, addUserDataAndCreateIndex);
+    }
+
+    function keepCategories(err, result)
+    {
+      if (err !== null) {
+        alert('Something went wrong: ' + err);
+        return;
+      }
+
+      $categories = result;
+      storeObjectInStorage('categories', $categories);
+      dataIsReady();
     }
 
     function addUserDataAndCreateIndex(result) {
@@ -416,12 +432,12 @@
 
       for (var i = 0; i < $data.length; i++)
         if (jsonResult.hasOwnProperty($data[i].baseId))
-          $data[i].instance = jsonResult[$data[i].baseId];
+          $data[i].instance = jsonResult[$data[i].baseId][0];
 
       $data.sort(compareDataElements);
       storeObjectInStorage('data', $data);
       localStorage.setItem('profile', $profile);
-      dataIsReady();
+      getCategories();
     }
 
     function getData() {
@@ -429,15 +445,26 @@
 
       // display objects
       if ($data != null) {
+        getCategories();
+      }
+      else {
+        setStatus("Syncing data...");
+        clearLocalStorage();
+        getJSON("https://swgohlabels.com/services/UnitsList.json?" + new Date().getTime(), keepData);
+      }
+    }
+
+    function getCategories() {
+      $categories = getObjectFromStorage('categories');
+
+      // display objects
+      if ($categories != null) {
         dataIsReady();
       }
       else {
         setStatus("Syncing data...");
         clearLocalStorage();
-        //getJSON("https://raw.githubusercontent.com/jmiln/SWGoHBot/master/data/characters.json", keepData);
-        //ObjectsExecuteCommand("getAllObjects", null, keepData);
-        //putXML("https://swgohlabels.com/services/test_index.php", keepData);
-        getJSON("https://swgohlabels.com/services/UnitsList.json", keepData);
+        getJSON("https://swgohlabels.com/services/CategoryList.json?" + new Date().getTime(), keepCategories);
       }
     }
 
@@ -460,7 +487,7 @@
     function refresh() {
       buildImagesIndex($data);
       $objects = new Objects($data, $images);
-      $labels = new Labels($objects);
+      $labels = new Labels($objects, $categories);
       displayObjects($data, $labels);
       filterAllToons();
       assignImages();
@@ -525,6 +552,7 @@
 
       Object.keys($images).forEach(function (key, index) {
         var myImage = new Image();
+        //myImage.onerror = onLoadError;
 
         if (index == lastIndex) {
           myImage.onload = function () {
@@ -532,10 +560,14 @@
           }
         }
 
-
         myImage.src = $images[key].src;
         preLoad.push(myImage);
       });
+    }
+
+    function onLoadError()
+    {
+      this.src = "";
     }
 
     function showImages() {
@@ -551,12 +583,18 @@
     }
 
     function compareDataElements(a, b) {
+      if (a.combatType != b.combatType)
+          return a.combatType - b.combatType;
+
       if (a.hasOwnProperty("instance") && b.hasOwnProperty("instance"))
-        return b.instance.power - a.instance.power;
+        return b.instance.gp - a.instance.gp;
+
       if (a.hasOwnProperty("instance"))
         return -1;
+
       if (b.hasOwnProperty("instance"))
         return 1;
+
       return 0;
     }
 

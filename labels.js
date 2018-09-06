@@ -1,12 +1,13 @@
 
 
 class Labels {
-    constructor(objects) {
+    constructor(objects, categories) {
         this.objects = objects;
+        this.categories = categories;
         this.userLabels = getObjectFromStorage('userLabels');
         this.baseLabels = getObjectFromStorage('baseLabels');
 
-        this.createBaseLabels(objects.objectsList);
+        this.createBaseLabels(objects.objectsList, categories);
         this.baseLabels = this.sortLabels(this.baseLabels);
 
         if (this.userLabels != null) {
