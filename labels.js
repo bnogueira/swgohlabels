@@ -5,7 +5,7 @@ class Labels {
         this.objects = objects;
         this.categories = categories;
         this.userLabels = getObjectFromStorage('userLabels');
-        this.baseLabels = getObjectFromStorage('baseLabels');
+        this.baseLabels = null;
 
         this.createBaseLabels(objects.objectsList, categories);
         this.baseLabels = this.sortLabels(this.baseLabels);
@@ -26,7 +26,12 @@ class Labels {
         var hidden = "";
         var hierarchy = label.split('.');
 
-        return '<div id="' + label + '" class="label notselected" ' + clickEvent + hidden + '>' + hierarchy[hierarchy.length - 1] + '</div>';
+        var labelName = hierarchy[hierarchy.length - 1];
+
+        if (this.categories.hasOwnProperty(labelName))
+            labelName = this.categories[labelName].descKey;
+
+        return '<div id="' + label + '" class="label notselected" ' + clickEvent + hidden + '>' + labelName + '</div>';
     }
 
     updateLabel(label, newName, objectsList) {
@@ -92,17 +97,19 @@ class Labels {
             // dig objectsList and create labels
             for (var i = 0; i < objectsList.length; i++) {
                 for (var j = 0; j < objectsList[i].categoryIdList.length; j++) {
-                    var labelName = root + objectsList[i].categoryIdList[j];
+                    var originalLabelName = objectsList[i].categoryIdList[j];
+                    var labelName = root + originalLabelName;
 
-                    if (this.baseLabels.hasOwnProperty(labelName) == false)
-                        this.baseLabels[labelName] = [];
-                    this.baseLabels[labelName].push(objectsList[i].baseId);
+                    if (this.categories.hasOwnProperty(originalLabelName)) {
+                        if (this.baseLabels.hasOwnProperty(labelName) == false)
+                            this.baseLabels[labelName] = [];
+                        this.baseLabels[labelName].push(objectsList[i].baseId);
+                    }
                 }
             }
 
             // complete labels hierarchy
             Labels.completeCollectionHierarchy(this.baseLabels);
-            storeObjectInStorage('baseLabels', this.baseLabels);
         }
     }
 
@@ -171,7 +178,7 @@ class Labels {
     }
 
     hasObjects(labelName) {
-        if (this.userLabels.hasOwnProperty(labelName) == false) 
+        if (this.userLabels.hasOwnProperty(labelName) == false)
             return false;
 
         var labelContent = this.userLabels[labelName];

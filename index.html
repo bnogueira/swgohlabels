@@ -11,10 +11,12 @@
 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="styles.css?version=1.94">
-  <script src="storage.js?version=1.3"></script>
-  <script src="objects.js?version=1.3"></script>
-  <script src="labels.js?version=1.3"></script>
-  <script src="enums.js?version=1..3"></script>
+  <script src="storage.js?version=1.32"></script>
+  <script src="objects.js?version=1.32"></script>
+  <script src="labels.js?version=1.32"></script>
+  <script src="enums.js?version=1.32"></script>
+  <script type="text/javascript" src="https://swgohlabels.com/services/UnitsList.json"></script>
+  <script type="text/javascript" src="https://swgohlabels.com/services/CategoryList.json"></script>
 
   <style>
   </style>
@@ -30,7 +32,7 @@
     <div class="w3-bar">
       <button id="profile" class="w3-button w3-light-blue w3-padding-small" style="margin: 5px;" onclick="updateProfile()">Sync</button>
       <button id="back" class="w3-button w3-light-blue w3-padding-small" style="margin: 5px;" onclick="buttonBackClicked()">Back</button>
-      <div class="w3-bar-item w3-text-blue-grey w3-right w3-tiny">1.30</div>
+      <div class="w3-bar-item w3-text-blue-grey w3-right w3-tiny">1.32</div>
     </div>
   </div>
 
@@ -261,7 +263,7 @@
 
           var idToken = sessionStorage.getItem("signInToken");
           sessionStorage.setItem(idToken, true);
-          getData();
+          getUserData();
         }
       };
       console.log("sending idtoken");
@@ -280,6 +282,9 @@
     }
 
     function main() {
+      $data = unitsList;
+      $categories = indexCategories(categoryList);
+
       $objects = null;
       $labels = null;
       $profile = localStorage.getItem("profile");
@@ -295,7 +300,17 @@
       if ($profile == null)
         setStatus("Sync");
       else
-        getData();
+        getUserData();
+    }
+
+    function indexCategories(categoryList)
+    {
+      var indexedCategories = {};
+
+      for (var i = 0; i < categoryList.length; i++)
+      indexedCategories[categoryList[i].id] = categoryList[i];
+
+      return indexedCategories;
     }
 
     function ObjectsExecuteCommand(command, arguments, callback) {
@@ -380,14 +395,7 @@
     }
 
 
-    function keepData(err, result) {
-      if (err !== null) {
-        alert('Something went wrong: ' + err);
-        return;
-      }
-
-      $data = result;
-
+    function getUserData() {
       for (var i = $data.length - 1; i >= 0 ; i--)
         if ($data[i].obtainable == false)
           $data.splice(i, 1);
@@ -397,23 +405,9 @@
         return;
       }
 
-      // getXML(
-      //   "https://script.google.com/macros/s/AKfycbxpqgsngbaUJ4xMl22o5VpAkz1oSpSzfIsw694CzfwyEc_GmeM/exec?user=" + $profile,
-      //   addUserDataAndCreateIndex);
+      setStatus("Syncing...");
 
       ObjectsExecuteCommand("getUserData", $profile, addUserDataAndCreateIndex);
-    }
-
-    function keepCategories(err, result)
-    {
-      if (err !== null) {
-        alert('Something went wrong: ' + err);
-        return;
-      }
-
-      $categories = result;
-      storeObjectInStorage('categories', $categories);
-      dataIsReady();
     }
 
     function addUserDataAndCreateIndex(result) {
@@ -435,37 +429,8 @@
           $data[i].instance = jsonResult[$data[i].baseId][0];
 
       $data.sort(compareDataElements);
-      storeObjectInStorage('data', $data);
       localStorage.setItem('profile', $profile);
-      getCategories();
-    }
-
-    function getData() {
-      $data = getObjectFromStorage('data');
-
-      // display objects
-      if ($data != null) {
-        getCategories();
-      }
-      else {
-        setStatus("Syncing data...");
-        clearLocalStorage();
-        getJSON("https://swgohlabels.com/services/UnitsList.json?" + new Date().getTime(), keepData);
-      }
-    }
-
-    function getCategories() {
-      $categories = getObjectFromStorage('categories');
-
-      // display objects
-      if ($categories != null) {
-        dataIsReady();
-      }
-      else {
-        setStatus("Syncing data...");
-        clearLocalStorage();
-        getJSON("https://swgohlabels.com/services/CategoryList.json?" + new Date().getTime(), keepCategories);
-      }
+      dataIsReady();
     }
 
     function dataIsReady() {
@@ -679,7 +644,7 @@
       resetContext();
       $profile = profile;
       clearLocalStorage();
-      getData();
+      getUserData();
       hideHelp();
       //setStatus($profile);
     }
